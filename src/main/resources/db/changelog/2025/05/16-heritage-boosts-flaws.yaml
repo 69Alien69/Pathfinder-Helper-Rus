@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025-05-16-heritage-boosts-and-flaws
+      author: pathfinder-helper
+      changes:
+        - createTable:
+            tableName: heritage_boosts
+            columns:
+              - column:
+                  name: heritage_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: boost
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: heritage_boosts
+            baseColumnNames: heritage_id
+            constraintName: fk_heritage_boosts_heritage
+            referencedTableName: heritage
+            referencedColumnNames: id
+
+        - createTable:
+            tableName: heritage_flaws
+            columns:
+              - column:
+                  name: heritage_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: flaw
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: heritage_flaws
+            baseColumnNames: heritage_id
+            constraintName: fk_heritage_flaws_heritage
+            referencedTableName: heritage
+            referencedColumnNames: id

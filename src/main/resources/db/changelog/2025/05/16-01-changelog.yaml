@@ -1,0 +1,2558 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747380752087-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: action_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: ancestry_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: armor_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: background_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: condition_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: feat_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: game_class_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: heritage_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: item_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: lore_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-11
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: material_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-12
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: shield_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-13
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: special_ability_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-14
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: spell_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-15
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: trait_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-16
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: weapon_seq
+            startValue: 1
+  - changeSet:
+      id: 1747380752087-17
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_action
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: action_cost
+                  type: VARCHAR(255)
+              - column:
+                  name: prerequisites
+                  type: VARCHAR(255)
+              - column:
+                  name: trigger
+                  type: VARCHAR(255)
+            tableName: action
+  - changeSet:
+      id: 1747380752087-18
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: hit_points
+                  type: INT
+              - column:
+                  name: size
+                  type: VARCHAR(255)
+              - column:
+                  name: speed
+                  type: INT
+            tableName: ancestry
+  - changeSet:
+      id: 1747380752087-19
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: boost
+                  type: VARCHAR(255)
+            tableName: ancestry_boosts
+  - changeSet:
+      id: 1747380752087-20
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_feats
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_feats
+                  name: feat_id
+                  type: BIGINT
+            tableName: ancestry_feats
+  - changeSet:
+      id: 1747380752087-21
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: flaw
+                  type: VARCHAR(255)
+            tableName: ancestry_flaws
+  - changeSet:
+      id: 1747380752087-22
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_heritages
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_heritages
+                  name: heritage_id
+                  type: BIGINT
+            tableName: ancestry_heritages
+  - changeSet:
+      id: 1747380752087-23
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: language
+                  type: VARCHAR(255)
+            tableName: ancestry_languages
+  - changeSet:
+      id: 1747380752087-24
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_special_abilities
+                  name: ability_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_special_abilities
+                  name: ancestry_id
+                  type: BIGINT
+            tableName: ancestry_special_abilities
+  - changeSet:
+      id: 1747380752087-25
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_traits
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_ancestry_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: ancestry_traits
+  - changeSet:
+      id: 1747380752087-26
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_armor
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: armor_bonus
+                  type: INT
+              - column:
+                  name: dexterity_cap
+                  type: INT
+              - column:
+                  name: check_penalty
+                  type: INT
+              - column:
+                  name: speed_penalty
+                  type: INT
+              - column:
+                  name: strength_requirement
+                  type: INT
+              - column:
+                  name: armor_group
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: material_id
+                  type: BIGINT
+            tableName: armor
+  - changeSet:
+      id: 1747380752087-27
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_armor_traits
+                  name: armor_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_armor_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: armor_traits
+  - changeSet:
+      id: 1747380752087-28
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: feat_granted_id
+                  type: BIGINT
+            tableName: background
+  - changeSet:
+      id: 1747380752087-29
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: background_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: language
+                  type: VARCHAR(255)
+            tableName: background_languages
+  - changeSet:
+      id: 1747380752087-30
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_lores
+                  name: background_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_lores
+                  name: lore_id
+                  type: BIGINT
+            tableName: background_lores
+  - changeSet:
+      id: 1747380752087-31
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_skill_ranks
+                  name: background_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_skill_ranks
+                  name: skill
+                  type: VARCHAR(255)
+            tableName: background_skill_ranks
+  - changeSet:
+      id: 1747380752087-32
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_traits
+                  name: background_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_background_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: background_traits
+  - changeSet:
+      id: 1747380752087-33
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_feats
+                  name: character_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_feats
+                  name: feat_id
+                  type: BIGINT
+            tableName: character_feats
+  - changeSet:
+      id: 1747380752087-34
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: character_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: language
+                  type: VARCHAR(255)
+            tableName: character_languages
+  - changeSet:
+      id: 1747380752087-35
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_skill_ranks
+                  name: character_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_skill_ranks
+                  name: skill
+                  type: VARCHAR(255)
+            tableName: character_skill_ranks
+  - changeSet:
+      id: 1747380752087-36
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_traits
+                  name: character_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_character_traits
+                  name: trait_id
+                  type: BIGINT
+            tableName: character_traits
+  - changeSet:
+      id: 1747380752087-37
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: character_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: weapon_id
+                  type: BIGINT
+            tableName: character_weapons
+  - changeSet:
+      id: 1747380752087-38
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_armor_proficiencies
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  name: proficiency_rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_armor_proficiencies
+                  name: armor
+                  type: VARCHAR(255)
+            tableName: class_armor_proficiencies
+  - changeSet:
+      id: 1747380752087-39
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_feats
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_feats
+                  name: feat_id
+                  type: BIGINT
+            tableName: class_feats
+  - changeSet:
+      id: 1747380752087-40
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_save_proficiencies
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  name: proficiency_rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_save_proficiencies
+                  name: save_throw
+                  type: VARCHAR(255)
+            tableName: class_save_proficiencies
+  - changeSet:
+      id: 1747380752087-41
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_skill_proficiencies
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  name: proficiency_rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_skill_proficiencies
+                  name: skill
+                  type: VARCHAR(255)
+            tableName: class_skill_proficiencies
+  - changeSet:
+      id: 1747380752087-42
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_weapon_proficiencies
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  name: proficiency_rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_class_weapon_proficiencies
+                  name: weapon
+                  type: VARCHAR(255)
+            tableName: class_weapon_proficiencies
+  - changeSet:
+      id: 1747380752087-43
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_condition
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: effect
+                  type: VARCHAR(255)
+            tableName: condition
+  - changeSet:
+      id: 1747380752087-44
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: level
+                  type: INT
+              - column:
+                  name: prerequisites
+                  type: VARCHAR(255)
+            tableName: feat
+  - changeSet:
+      id: 1747380752087-45
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_actions
+                  name: action_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_actions
+                  name: feat_id
+                  type: BIGINT
+            tableName: feat_actions
+  - changeSet:
+      id: 1747380752087-46
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_traits
+                  name: feat_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: feat_traits
+  - changeSet:
+      id: 1747380752087-47
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_gameclass
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: hit_die
+                  type: INT
+              - column:
+                  name: initial_perception
+                  type: VARCHAR(255)
+              - column:
+                  name: class_features
+                  type: VARCHAR(255)
+              - column:
+                  name: signature_abilities
+                  type: VARCHAR(255)
+              - column:
+                  name: is_spell_caster
+                  type: BOOLEAN
+              - column:
+                  name: spell_casting
+                  type: VARCHAR(255)
+            tableName: game_class
+  - changeSet:
+      id: 1747380752087-48
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_game_class_traits
+                  name: game_class_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_game_class_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: game_class_traits
+  - changeSet:
+      id: 1747380752087-49
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: hit_point_modifier
+                  type: INT
+              - column:
+                  name: size
+                  type: VARCHAR(255)
+              - column:
+                  name: resistances
+                  type: VARCHAR(255)
+              - column:
+                  name: ac_bonus
+                  type: INT
+            tableName: heritage
+  - changeSet:
+      id: 1747380752087-50
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_feats
+                  name: feat_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_feats
+                  name: heritage_id
+                  type: BIGINT
+            tableName: heritage_feats
+  - changeSet:
+      id: 1747380752087-51
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: heritage_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: language
+                  type: VARCHAR(255)
+            tableName: heritage_languages
+  - changeSet:
+      id: 1747380752087-52
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_skill_ranks
+                  name: heritage_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: rank
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_skill_ranks
+                  name: skill
+                  type: VARCHAR(255)
+            tableName: heritage_skill_ranks
+  - changeSet:
+      id: 1747380752087-53
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_special_abilities
+                  name: ability_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_special_abilities
+                  name: heritage_id
+                  type: BIGINT
+            tableName: heritage_special_abilities
+  - changeSet:
+      id: 1747380752087-54
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_traits
+                  name: heritage_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_heritage_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: heritage_traits
+  - changeSet:
+      id: 1747380752087-55
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_item
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: consumable
+                  type: BOOLEAN
+              - column:
+                  name: magical
+                  type: BOOLEAN
+              - column:
+                  name: level
+                  type: INT
+              - column:
+                  name: cp
+                  type: INT
+              - column:
+                  name: sp
+                  type: INT
+              - column:
+                  name: gp
+                  type: INT
+              - column:
+                  name: pp
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: bulk_units
+                  type: INT
+            tableName: item
+  - changeSet:
+      id: 1747380752087-56
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_item_traits
+                  name: item_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_item_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: item_traits
+  - changeSet:
+      id: 1747380752087-57
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: boost
+                  type: VARCHAR(255)
+            tableName: key_ability
+  - changeSet:
+      id: 1747380752087-58
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_lore
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+            tableName: lore
+  - changeSet:
+      id: 1747380752087-59
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_material
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: hardness
+                  type: INT
+              - column:
+                  name: hit_points
+                  type: INT
+              - column:
+                  name: broken_threshold
+                  type: INT
+            tableName: material
+  - changeSet:
+      id: 1747380752087-60
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_material_traits
+                  name: material_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_material_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: material_traits
+  - changeSet:
+      id: 1747380752087-61
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_playercharacter
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: player
+                  type: VARCHAR(255)
+              - column:
+                  name: level
+                  type: TINYINT
+              - column:
+                  name: experience
+                  type: INT
+              - column:
+                  name: hero_points
+                  type: TINYINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: ancestry_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: heritage_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: background_id
+                  type: BIGINT
+              - column:
+                  name: background_notes
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: class_id
+                  type: BIGINT
+              - column:
+                  name: game_class_notes
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: armor_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: shield_id
+                  type: BIGINT
+              - column:
+                  name: defenses_notes
+                  type: VARCHAR(255)
+              - column:
+                  name: perception
+                  type: INT
+              - column:
+                  name: senses
+                  type: VARCHAR(255)
+              - column:
+                  name: perception_notes
+                  type: VARCHAR(255)
+              - column:
+                  name: speed
+                  type: INT
+              - column:
+                  name: special_movement
+                  type: VARCHAR(255)
+              - column:
+                  name: game_class_difficulty_class
+                  type: INT
+              - column:
+                  name: strength
+                  type: TINYINT
+              - column:
+                  name: dexterity
+                  type: TINYINT
+              - column:
+                  name: constitution
+                  type: TINYINT
+              - column:
+                  name: intelligence
+                  type: TINYINT
+              - column:
+                  name: wisdom
+                  type: TINYINT
+              - column:
+                  name: charisma
+                  type: TINYINT
+              - column:
+                  name: fortitude
+                  type: TINYINT
+              - column:
+                  name: reflex
+                  type: TINYINT
+              - column:
+                  name: will
+                  type: TINYINT
+              - column:
+                  name: maximum_hit_points
+                  type: INT
+              - column:
+                  name: current_hit_points
+                  type: INT
+              - column:
+                  name: temporary_hit_points
+                  type: INT
+              - column:
+                  name: dying
+                  type: TINYINT
+              - column:
+                  name: wounded
+                  type: TINYINT
+              - column:
+                  name: resistances
+                  type: VARCHAR(255)
+              - column:
+                  name: immunities
+                  type: VARCHAR(255)
+              - column:
+                  name: conditions
+                  type: VARCHAR(255)
+            tableName: player_character
+  - changeSet:
+      id: 1747380752087-62
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_shield
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: shield_bonus
+                  type: INT
+              - column:
+                  name: speed_penalty
+                  type: INT
+              - column:
+                  name: hardness
+                  type: INT
+              - column:
+                  name: maximum_hit_points
+                  type: INT
+              - column:
+                  name: current_hit_points
+                  type: INT
+            tableName: shield
+  - changeSet:
+      id: 1747380752087-63
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_shield_traits
+                  name: shield_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_shield_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: shield_traits
+  - changeSet:
+      id: 1747380752087-64
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_specialability
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: ability_type
+                  type: VARCHAR(255)
+              - column:
+                  name: frequency
+                  type: VARCHAR(255)
+              - column:
+                  name: actions_required
+                  type: INT
+              - column:
+                  name: trigger
+                  type: VARCHAR(255)
+              - column:
+                  name: prerequisites
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: item_id
+                  type: BIGINT
+              - column:
+                  name: grant_quantity
+                  type: INT
+            tableName: special_ability
+  - changeSet:
+      id: 1747380752087-65
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_special_ability_traits
+                  name: special_ability_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_special_ability_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: special_ability_traits
+  - changeSet:
+      id: 1747380752087-66
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spell
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+              - column:
+                  name: magic_tradition
+                  type: VARCHAR(255)
+              - column:
+                  name: action_cast
+                  type: BOOLEAN
+              - column:
+                  name: action_cast_cost
+                  type: VARCHAR(255)
+              - column:
+                  name: time_cast
+                  type: INT
+              - column:
+                  name: range
+                  type: INT
+              - column:
+                  name: area
+                  type: INT
+              - column:
+                  name: target
+                  type: VARCHAR(255)
+              - column:
+                  name: save_throw
+                  type: VARCHAR(255)
+              - column:
+                  name: duration
+                  type: INT
+              - column:
+                  name: effect
+                  type: VARCHAR(255)
+            tableName: spell
+  - changeSet:
+      id: 1747380752087-67
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spell_traits
+                  name: spell_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spell_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: spell_traits
+  - changeSet:
+      id: 1747380752087-68
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_trait
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+            tableName: trait
+  - changeSet:
+      id: 1747380752087-69
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_weapon
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: weapon_type
+                  type: VARCHAR(255)
+              - column:
+                  name: weapon_category
+                  type: VARCHAR(255)
+              - column:
+                  name: weapon_group
+                  type: VARCHAR(255)
+              - column:
+                  name: hands
+                  type: INT
+              - column:
+                  name: damage_type
+                  type: VARCHAR(255)
+              - column:
+                  name: range
+                  type: INT
+              - column:
+                  name: reload
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: material_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: dice_count
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: dice_sides
+                  type: INT
+            tableName: weapon
+  - changeSet:
+      id: 1747380752087-70
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_weapon_ammunition
+                  name: ammunition_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_weapon_ammunition
+                  name: weapon_id
+                  type: BIGINT
+            tableName: weapon_ammunition
+  - changeSet:
+      id: 1747380752087-71
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_weapon_traits
+                  name: weapon_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_weapon_traits
+                  name: traits_id
+                  type: BIGINT
+            tableName: weapon_traits
+  - changeSet:
+      id: 1747380752087-72
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: armor
+            constraintName: FK_ARMOR_ON_ID
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-73
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: material_id
+            baseTableName: armor
+            constraintName: FK_ARMOR_ON_MATERIAL
+            referencedColumnNames: id
+            referencedTableName: material
+  - changeSet:
+      id: 1747380752087-74
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_granted_id
+            baseTableName: background
+            constraintName: FK_BACKGROUND_ON_FEAT_GRANTED
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-75
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: material
+            constraintName: FK_MATERIAL_ON_ID
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-76
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_ANCESTRY
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-77
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: armor_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_ARMOR
+            referencedColumnNames: id
+            referencedTableName: armor
+  - changeSet:
+      id: 1747380752087-78
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: background_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_BACKGROUND
+            referencedColumnNames: id
+            referencedTableName: background
+  - changeSet:
+      id: 1747380752087-79
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_CLASS
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-80
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_HERITAGE
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-81
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: shield_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_SHIELD
+            referencedColumnNames: id
+            referencedTableName: shield
+  - changeSet:
+      id: 1747380752087-82
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: shield
+            constraintName: FK_SHIELD_ON_ID
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-83
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: item_id
+            baseTableName: special_ability
+            constraintName: FK_SPECIALABILITY_ON_ITEM
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-84
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: weapon
+            constraintName: FK_WEAPON_ON_ID
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-85
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: material_id
+            baseTableName: weapon
+            constraintName: FK_WEAPON_ON_MATERIAL
+            referencedColumnNames: id
+            referencedTableName: material
+  - changeSet:
+      id: 1747380752087-86
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_boosts
+            constraintName: fk_ancestry_boosts_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-87
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_flaws
+            constraintName: fk_ancestry_flaws_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-88
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_languages
+            constraintName: fk_ancestry_languages_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-89
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_feats
+            constraintName: fk_ancfea_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-90
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: ancestry_feats
+            constraintName: fk_ancfea_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-91
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_heritages
+            constraintName: fk_ancher_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-92
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: ancestry_heritages
+            constraintName: fk_ancher_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-93
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_special_abilities
+            constraintName: fk_ancspeabi_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-94
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ability_id
+            baseTableName: ancestry_special_abilities
+            constraintName: fk_ancspeabi_on_special_ability
+            referencedColumnNames: id
+            referencedTableName: special_ability
+  - changeSet:
+      id: 1747380752087-95
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ancestry_id
+            baseTableName: ancestry_traits
+            constraintName: fk_anctra_on_ancestry
+            referencedColumnNames: id
+            referencedTableName: ancestry
+  - changeSet:
+      id: 1747380752087-96
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: ancestry_traits
+            constraintName: fk_anctra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-97
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: armor_id
+            baseTableName: armor_traits
+            constraintName: fk_armtra_on_armor
+            referencedColumnNames: id
+            referencedTableName: armor
+  - changeSet:
+      id: 1747380752087-98
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: armor_traits
+            constraintName: fk_armtra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-99
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: background_id
+            baseTableName: background_languages
+            constraintName: fk_background_languages_on_background
+            referencedColumnNames: id
+            referencedTableName: background
+  - changeSet:
+      id: 1747380752087-100
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: background_id
+            baseTableName: background_skill_ranks
+            constraintName: fk_background_skill_ranks_on_background
+            referencedColumnNames: id
+            referencedTableName: background
+  - changeSet:
+      id: 1747380752087-101
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: background_id
+            baseTableName: background_lores
+            constraintName: fk_baclor_on_background
+            referencedColumnNames: id
+            referencedTableName: background
+  - changeSet:
+      id: 1747380752087-102
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: lore_id
+            baseTableName: background_lores
+            constraintName: fk_baclor_on_lore
+            referencedColumnNames: id
+            referencedTableName: lore
+  - changeSet:
+      id: 1747380752087-103
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: background_id
+            baseTableName: background_traits
+            constraintName: fk_bactra_on_background
+            referencedColumnNames: id
+            referencedTableName: background
+  - changeSet:
+      id: 1747380752087-104
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: background_traits
+            constraintName: fk_bactra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-105
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: character_feats
+            constraintName: fk_chafea_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-106
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_feats
+            constraintName: fk_chafea_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1747380752087-107
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_languages
+            constraintName: fk_character_languages_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1747380752087-108
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_skill_ranks
+            constraintName: fk_character_skill_ranks_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1747380752087-109
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_traits
+            constraintName: fk_chatra_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1747380752087-110
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: trait_id
+            baseTableName: character_traits
+            constraintName: fk_chatra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-111
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_weapons
+            constraintName: fk_chawea_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1747380752087-112
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: weapon_id
+            baseTableName: character_weapons
+            constraintName: fk_chawea_on_weapon
+            referencedColumnNames: id
+            referencedTableName: weapon
+  - changeSet:
+      id: 1747380752087-113
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: class_feats
+            constraintName: fk_clafea_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-114
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: class_feats
+            constraintName: fk_clafea_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-115
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: class_armor_proficiencies
+            constraintName: fk_class_armor_proficiencies_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-116
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: class_save_proficiencies
+            constraintName: fk_class_save_proficiencies_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-117
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: class_skill_proficiencies
+            constraintName: fk_class_skill_proficiencies_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-118
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: class_weapon_proficiencies
+            constraintName: fk_class_weapon_proficiencies_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-119
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: action_id
+            baseTableName: feat_actions
+            constraintName: fk_feaact_on_action
+            referencedColumnNames: id
+            referencedTableName: action
+  - changeSet:
+      id: 1747380752087-120
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: feat_actions
+            constraintName: fk_feaact_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-121
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: feat_traits
+            constraintName: fk_featra_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-122
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: feat_traits
+            constraintName: fk_featra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-123
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: game_class_id
+            baseTableName: game_class_traits
+            constraintName: fk_gamclatra_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-124
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: game_class_traits
+            constraintName: fk_gamclatra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-125
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: heritage_feats
+            constraintName: fk_herfea_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747380752087-126
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: heritage_feats
+            constraintName: fk_herfea_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-127
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: heritage_languages
+            constraintName: fk_heritage_languages_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-128
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: heritage_skill_ranks
+            constraintName: fk_heritage_skill_ranks_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-129
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: heritage_special_abilities
+            constraintName: fk_herspeabi_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-130
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ability_id
+            baseTableName: heritage_special_abilities
+            constraintName: fk_herspeabi_on_special_ability
+            referencedColumnNames: id
+            referencedTableName: special_ability
+  - changeSet:
+      id: 1747380752087-131
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: heritage_id
+            baseTableName: heritage_traits
+            constraintName: fk_hertra_on_heritage
+            referencedColumnNames: id
+            referencedTableName: heritage
+  - changeSet:
+      id: 1747380752087-132
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: heritage_traits
+            constraintName: fk_hertra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-133
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: item_id
+            baseTableName: item_traits
+            constraintName: fk_itetra_on_item
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-134
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: item_traits
+            constraintName: fk_itetra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-135
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: class_id
+            baseTableName: key_ability
+            constraintName: fk_key_ability_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747380752087-136
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: material_id
+            baseTableName: material_traits
+            constraintName: fk_mattra_on_material
+            referencedColumnNames: id
+            referencedTableName: material
+  - changeSet:
+      id: 1747380752087-137
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: material_traits
+            constraintName: fk_mattra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-138
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: shield_id
+            baseTableName: shield_traits
+            constraintName: fk_shitra_on_shield
+            referencedColumnNames: id
+            referencedTableName: shield
+  - changeSet:
+      id: 1747380752087-139
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: shield_traits
+            constraintName: fk_shitra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-140
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: special_ability_id
+            baseTableName: special_ability_traits
+            constraintName: fk_speabitra_on_special_ability
+            referencedColumnNames: id
+            referencedTableName: special_ability
+  - changeSet:
+      id: 1747380752087-141
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: special_ability_traits
+            constraintName: fk_speabitra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-142
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: spell_id
+            baseTableName: spell_traits
+            constraintName: fk_spetra_on_spell
+            referencedColumnNames: id
+            referencedTableName: spell
+  - changeSet:
+      id: 1747380752087-143
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: spell_traits
+            constraintName: fk_spetra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-144
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ammunition_id
+            baseTableName: weapon_ammunition
+            constraintName: fk_weaamm_on_item
+            referencedColumnNames: id
+            referencedTableName: item
+  - changeSet:
+      id: 1747380752087-145
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: weapon_id
+            baseTableName: weapon_ammunition
+            constraintName: fk_weaamm_on_weapon
+            referencedColumnNames: id
+            referencedTableName: weapon
+  - changeSet:
+      id: 1747380752087-146
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: traits_id
+            baseTableName: weapon_traits
+            constraintName: fk_weatra_on_trait
+            referencedColumnNames: id
+            referencedTableName: trait
+  - changeSet:
+      id: 1747380752087-147
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: weapon_id
+            baseTableName: weapon_traits
+            constraintName: fk_weatra_on_weapon
+            referencedColumnNames: id
+            referencedTableName: weapon
+

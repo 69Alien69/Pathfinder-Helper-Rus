@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/2025/05/16-01-changelog.yaml
+  - include:
+      file: db/changelog/2025/05/16-heritage-boosts-flaws.yaml
