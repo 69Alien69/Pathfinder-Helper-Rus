@@ -9,6 +9,7 @@ import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.ProficiencyRank;
 import ru.hackass122.pathfinderhelper.common.enums.Skill;
 import ru.hackass122.pathfinderhelper.game_data.entity.*;
+import ru.hackass122.pathfinderhelper.user.entity.User;
 
 import java.util.*;
 
@@ -25,8 +26,8 @@ public class PlayerCharacter {
     @Column
     private String name;
 
-    @Column
-    private String player; // TODO: заменить на Player после реализации
+    @ManyToOne
+    private User player;
 
     @Column
     private byte level;

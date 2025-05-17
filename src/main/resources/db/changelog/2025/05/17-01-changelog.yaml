@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747485071993-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: player_id
+                  type: BIGINT
+            tableName: player_character
+  - changeSet:
+      id: 1747485071993-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: player_id
+            baseTableName: player_character
+            constraintName: FK_PLAYERCHARACTER_ON_PLAYER
+            referencedColumnNames: id
+            referencedTableName: users
+  - changeSet:
+      id: 1747485071993-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: player
+            tableName: player_character
+
