@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747496362367-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: heritage_boosts
+            constraintName: fk_heritage_boosts_heritage
+  - changeSet:
+      id: 1747496362367-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: heritage_flaws
+            constraintName: fk_heritage_flaws_heritage
+  - changeSet:
+      id: 1747496362367-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_gameclass_spellcastingentries
+                  name: game_class_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_gameclass_spellcastingentries
+                  name: spell_casting_entries_id
+                  type: BIGINT
+            tableName: game_class_spell_casting_entries
+  - changeSet:
+      id: 1747496362367-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: spell_casting_entries_id
+            constraintName: uc_game_class_spell_casting_entries_spellcastingentries
+            tableName: game_class_spell_casting_entries
+  - changeSet:
+      id: 1747496362367-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: game_class_id
+            baseTableName: game_class_spell_casting_entries
+            constraintName: fk_gamclaspecasent_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747496362367-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: spell_casting_entries_id
+            baseTableName: game_class_spell_casting_entries
+            constraintName: fk_gamclaspecasent_on_spell_casting_entry
+            referencedColumnNames: id
+            referencedTableName: spell_casting_entry
+

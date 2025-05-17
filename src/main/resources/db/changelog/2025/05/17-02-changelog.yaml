@@ -1,0 +1,170 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747495986759-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: spell_casting_entry_seq
+            startValue: 1
+  - changeSet:
+      id: 1747495986759-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: spell_known_seq
+            startValue: 1
+  - changeSet:
+      id: 1747495986759-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: spell_slots_seq
+            startValue: 1
+  - changeSet:
+      id: 1747495986759-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spellcastingentry
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: magic_tradition
+                  type: SMALLINT
+              - column:
+                  name: has_spells
+                  type: BOOLEAN
+            tableName: spell_casting_entry
+  - changeSet:
+      id: 1747495986759-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spellknown
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: entry_id
+                  type: BIGINT
+              - column:
+                  name: rank
+                  type: INT
+              - column:
+                  name: spell_id
+                  type: BIGINT
+            tableName: spell_known
+  - changeSet:
+      id: 1747495986759-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_spellslots
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: entry_id
+                  type: BIGINT
+              - column:
+                  name: rank
+                  type: INT
+              - column:
+                  name: total_slots
+                  type: INT
+              - column:
+                  name: used_slots
+                  type: INT
+            tableName: spell_slots
+  - changeSet:
+      id: 1747495986759-14
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_id
+            baseTableName: spell_known
+            constraintName: FK_SPELLKNOWN_ON_ENTRY
+            referencedColumnNames: id
+            referencedTableName: spell_casting_entry
+  - changeSet:
+      id: 1747495986759-15
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: spell_id
+            baseTableName: spell_known
+            constraintName: FK_SPELLKNOWN_ON_SPELL
+            referencedColumnNames: id
+            referencedTableName: spell
+  - changeSet:
+      id: 1747495986759-16
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: entry_id
+            baseTableName: spell_slots
+            constraintName: FK_SPELLSLOTS_ON_ENTRY
+            referencedColumnNames: id
+            referencedTableName: spell_casting_entry
+  - changeSet:
+      id: 1747495986759-17
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: game_class_id
+            baseTableName: game_class_special_abilities
+            constraintName: fk_gamclaspeabi_on_game_class
+            referencedColumnNames: id
+            referencedTableName: game_class
+  - changeSet:
+      id: 1747495986759-18
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ability_id
+            baseTableName: game_class_special_abilities
+            constraintName: fk_gamclaspeabi_on_special_ability
+            referencedColumnNames: id
+            referencedTableName: special_ability
+  - changeSet:
+      id: 1747495986759-21
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: class_features
+            tableName: game_class
+        - dropColumn:
+            columnName: signature_abilities
+            tableName: game_class
+        - dropColumn:
+            columnName: spell_casting
+            tableName: game_class
+

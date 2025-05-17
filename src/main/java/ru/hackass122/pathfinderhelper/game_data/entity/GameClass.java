@@ -84,9 +84,6 @@ public class GameClass extends TaggableRuleElement{
     @Enumerated(EnumType.STRING)
     private Map<ArmorCategory, ProficiencyRank> initialArmorProficiencies = new HashMap<>();
 
-    @Column
-    private String classFeatures; // TODO: заменить на подходящую реализацию
-
     @ManyToMany
     @JoinTable(
             name = "class_feats",
@@ -95,13 +92,18 @@ public class GameClass extends TaggableRuleElement{
     )
     private Set<Feat> gameClassFeats = new HashSet<>();
 
-    @Column
-    private String signatureAbilities; // TODO: заменить на реализацию особых умений
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "game_class_special_abilities",
+            joinColumns = @JoinColumn(name = "game_class_id"),
+            inverseJoinColumns = @JoinColumn(name = "ability_id")
+    )
+    private Set<SpecialAbility> specialAbilities = new HashSet<>();
 
     @Column
     private boolean isSpellCaster;
 
-    @Column
-    private String spellCasting; // TODO: заменить на реализацию блока SpellCasting
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SpellCastingEntry> spellCastingEntries;
 
 }
