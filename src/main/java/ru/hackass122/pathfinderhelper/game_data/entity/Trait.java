@@ -1,7 +1,7 @@
 package ru.hackass122.pathfinderhelper.game_data.entity;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

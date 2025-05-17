@@ -1,0 +1,355 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747509924385-24
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: code
+                  type: VARCHAR(255)
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-25
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnName: code
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-26
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_action_code
+            tableName: action
+  - changeSet:
+      id: 1747509924385-27
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_ancestry_code
+            tableName: ancestry
+  - changeSet:
+      id: 1747509924385-28
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_background_code
+            tableName: background
+  - changeSet:
+      id: 1747509924385-29
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_condition_code
+            tableName: condition
+  - changeSet:
+      id: 1747509924385-30
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_feat_code
+            tableName: feat
+  - changeSet:
+      id: 1747509924385-31
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_gameclass_code
+            tableName: game_class
+  - changeSet:
+      id: 1747509924385-32
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_heritage_code
+            tableName: heritage
+  - changeSet:
+      id: 1747509924385-33
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_item_code
+            tableName: item
+  - changeSet:
+      id: 1747509924385-34
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_lore_code
+            tableName: lore
+  - changeSet:
+      id: 1747509924385-35
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_playercharacter_code
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-36
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_specialability_code
+            tableName: special_ability
+  - changeSet:
+      id: 1747509924385-37
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_spell_code
+            tableName: spell
+  - changeSet:
+      id: 1747509924385-38
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_trait_code
+            tableName: trait
+  - changeSet:
+      id: 1747509924385-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: ancestry_id
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: armor_id
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: background_id
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: class_id
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: action
+            validate: true
+  - changeSet:
+      id: 1747509924385-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: ancestry
+            validate: true
+  - changeSet:
+      id: 1747509924385-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: background
+            validate: true
+  - changeSet:
+      id: 1747509924385-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: condition
+            validate: true
+  - changeSet:
+      id: 1747509924385-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: feat
+            validate: true
+  - changeSet:
+      id: 1747509924385-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: game_class
+            validate: true
+  - changeSet:
+      id: 1747509924385-11
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: heritage
+            validate: true
+  - changeSet:
+      id: 1747509924385-12
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: item
+            validate: true
+  - changeSet:
+      id: 1747509924385-13
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: lore
+            validate: true
+  - changeSet:
+      id: 1747509924385-14
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: special_ability
+            validate: true
+  - changeSet:
+      id: 1747509924385-15
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: spell
+            validate: true
+  - changeSet:
+      id: 1747509924385-16
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: VARCHAR(255)
+            columnName: code
+            tableName: trait
+            validate: true
+  - changeSet:
+      id: 1747509924385-17
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: heritage_id
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-18
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: hero_points
+            tableName: player_character
+        - dropColumn:
+            columnName: level
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-19
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: hero_points
+                  type: INT
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-21
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: level
+                  type: INT
+            tableName: player_character
+  - changeSet:
+      id: 1747509924385-22
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addNotNullConstraint:
+            columnDataType: BIGINT
+            columnName: player_id
+            tableName: player_character
+            validate: true
+  - changeSet:
+      id: 1747509924385-23
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropNotNullConstraint:
+            columnDataType: bigint
+            columnName: shield_id
+            tableName: player_character
+

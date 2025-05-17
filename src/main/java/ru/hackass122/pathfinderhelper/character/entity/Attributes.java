@@ -3,13 +3,12 @@ package ru.hackass122.pathfinderhelper.character.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Embeddable
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Attributes {
@@ -31,6 +30,4 @@ public class Attributes {
 
     @Column
     private byte charisma;
-
-    // TODO реализовать атрибуты
 }
