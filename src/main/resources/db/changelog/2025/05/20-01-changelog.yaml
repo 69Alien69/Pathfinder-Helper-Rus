@@ -1,0 +1,158 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1747772882019-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: feat_actions
+            constraintName: fk_feaact_on_action
+  - changeSet:
+      id: 1747772882019-11
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: feat_actions
+            constraintName: fk_feaact_on_feat
+  - changeSet:
+      id: 1747772882019-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: effect_seq
+            startValue: 1
+  - changeSet:
+      id: 1747772882019-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: skill_proficiency_increase_effect_seq
+            startValue: 1
+  - changeSet:
+      id: 1747772882019-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_effect
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: effect_type
+                  type: VARCHAR(31)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: deprecated
+                  type: BOOLEAN
+            tableName: effect
+  - changeSet:
+      id: 1747772882019-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_effects
+                  name: effect_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_effects
+                  name: feat_id
+                  type: BIGINT
+            tableName: feat_effects
+  - changeSet:
+      id: 1747772882019-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_skillproficiencyincreaseeffect
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: target_skill
+                  type: VARCHAR(255)
+            tableName: skill_proficiency_increase_effect
+  - changeSet:
+      id: 1747772882019-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_effect_code
+            tableName: effect
+  - changeSet:
+      id: 1747772882019-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: skill_proficiency_increase_effect
+            constraintName: FK_SKILLPROFICIENCYINCREASEEFFECT_ON_ID
+            referencedColumnNames: id
+            referencedTableName: effect
+  - changeSet:
+      id: 1747772882019-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: effect_id
+            baseTableName: feat_effects
+            constraintName: fk_feaeff_on_effect
+            referencedColumnNames: id
+            referencedTableName: effect
+  - changeSet:
+      id: 1747772882019-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: feat_effects
+            constraintName: fk_feaeff_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1747772882019-14
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            tableName: feat_actions
+

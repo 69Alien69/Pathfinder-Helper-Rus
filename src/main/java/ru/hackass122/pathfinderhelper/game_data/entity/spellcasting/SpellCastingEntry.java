@@ -1,4 +1,4 @@
-package ru.hackass122.pathfinderhelper.game_data.entity;
+package ru.hackass122.pathfinderhelper.game_data.entity.spellcasting;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

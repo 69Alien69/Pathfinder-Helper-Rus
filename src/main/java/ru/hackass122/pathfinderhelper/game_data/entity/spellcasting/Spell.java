@@ -1,4 +1,4 @@
-package ru.hackass122.pathfinderhelper.game_data.entity;
+package ru.hackass122.pathfinderhelper.game_data.entity.spellcasting;
 
 import jakarta.persistence.AssociationOverride;
 import jakarta.persistence.Column;
@@ -14,6 +14,7 @@ import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.ActionCost;
 import ru.hackass122.pathfinderhelper.common.enums.MagicTradition;
 import ru.hackass122.pathfinderhelper.common.enums.SaveThrow;
+import ru.hackass122.pathfinderhelper.game_data.entity.TaggableRuleElement;
 
 @Entity
 @Getter

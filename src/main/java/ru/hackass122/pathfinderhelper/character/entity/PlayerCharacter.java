@@ -27,14 +27,14 @@ import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.ProficiencyRank;
 import ru.hackass122.pathfinderhelper.common.enums.Skill;
 import ru.hackass122.pathfinderhelper.game_data.entity.Ancestry;
-import ru.hackass122.pathfinderhelper.game_data.entity.Armor;
+import ru.hackass122.pathfinderhelper.game_data.entity.items.Armor;
 import ru.hackass122.pathfinderhelper.game_data.entity.Background;
 import ru.hackass122.pathfinderhelper.game_data.entity.Feat;
 import ru.hackass122.pathfinderhelper.game_data.entity.GameClass;
 import ru.hackass122.pathfinderhelper.game_data.entity.Heritage;
-import ru.hackass122.pathfinderhelper.game_data.entity.Shield;
+import ru.hackass122.pathfinderhelper.game_data.entity.items.Shield;
 import ru.hackass122.pathfinderhelper.game_data.entity.Trait;
-import ru.hackass122.pathfinderhelper.game_data.entity.Weapon;
+import ru.hackass122.pathfinderhelper.game_data.entity.items.Weapon;
 import ru.hackass122.pathfinderhelper.user.entity.User;
 
 import java.util.ArrayList;
@@ -189,5 +189,13 @@ public class PlayerCharacter {
     @Override
     public int hashCode() {
         return Objects.hashCode(code);
+    }
+
+    public Map<Skill, ProficiencyRank> getSkills() {
+        return Map.copyOf(skills);
+    }
+
+    public void setSkills(Map<Skill, ProficiencyRank> skills) {
+        this.skills = skills;
     }
 }

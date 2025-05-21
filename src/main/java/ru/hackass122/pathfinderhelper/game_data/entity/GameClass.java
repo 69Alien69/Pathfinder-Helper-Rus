@@ -25,6 +25,7 @@ import ru.hackass122.pathfinderhelper.common.enums.ProficiencyRank;
 import ru.hackass122.pathfinderhelper.common.enums.SaveThrow;
 import ru.hackass122.pathfinderhelper.common.enums.Skill;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponCategory;
+import ru.hackass122.pathfinderhelper.game_data.entity.spellcasting.SpellCastingEntry;
 
 import java.util.HashMap;
 import java.util.HashSet;

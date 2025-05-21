@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.hackass122.pathfinderhelper.game_data.entity.effect.Effect;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,11 +36,11 @@ public class Feat extends TaggableRuleElement {
 
     @ManyToMany
     @JoinTable(
-            name = "feat_actions",
+            name = "feat_effects",
             joinColumns = @JoinColumn(name = "feat_id"),
-            inverseJoinColumns = @JoinColumn(name = "action_id")
+            inverseJoinColumns = @JoinColumn(name = "effect_id")
     )
-    private Set<Action> actions = new HashSet<>();
+    private Set<Effect> effects = new HashSet<>();
 
     @Column
     private String prerequisites; // TODO: заменить на подходящую реализацию

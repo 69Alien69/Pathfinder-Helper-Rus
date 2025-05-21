@@ -1,4 +1,4 @@
-package ru.hackass122.pathfinderhelper.game_data.entity;
+package ru.hackass122.pathfinderhelper.game_data.entity.items;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -18,6 +18,7 @@ import ru.hackass122.pathfinderhelper.common.enums.DamageType;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponCategory;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponGroup;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponType;
+import ru.hackass122.pathfinderhelper.game_data.entity.Dice;
 
 import java.util.HashSet;
 import java.util.Set;

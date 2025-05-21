@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.hackass122.pathfinderhelper.game_data.entity.items.Item;
 
 @Entity
 @Getter
