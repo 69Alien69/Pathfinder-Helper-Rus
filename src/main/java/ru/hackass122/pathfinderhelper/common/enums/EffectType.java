@@ -1,7 +1,6 @@
 package ru.hackass122.pathfinderhelper.common.enums;
 
 public enum EffectType {
-    PROFICIENCY_INCREASE,
     BONUS,
     LANGUAGE_GAIN,
     SENSE_GAIN,

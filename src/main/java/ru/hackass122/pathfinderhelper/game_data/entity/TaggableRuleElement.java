@@ -2,7 +2,7 @@ package ru.hackass122.pathfinderhelper.game_data.entity;
 
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.MappedSuperclass;
-import ru.hackass122.pathfinderhelper.common.contract.Taggable;
+import ru.hackass122.pathfinderhelper.common.interfaces.Taggable;
 
 import java.util.Set;
 

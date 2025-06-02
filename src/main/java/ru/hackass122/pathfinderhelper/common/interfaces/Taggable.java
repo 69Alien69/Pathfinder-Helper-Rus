@@ -1,4 +1,4 @@
-package ru.hackass122.pathfinderhelper.common.contract;
+package ru.hackass122.pathfinderhelper.common.interfaces;
 
 import ru.hackass122.pathfinderhelper.game_data.entity.Trait;
 
