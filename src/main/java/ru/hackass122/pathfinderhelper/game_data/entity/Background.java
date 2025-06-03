@@ -14,10 +14,6 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.MapKeyEnumerated;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.ProficiencyRank;
 import ru.hackass122.pathfinderhelper.common.enums.Skill;
@@ -28,10 +24,6 @@ import java.util.Map;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @AssociationOverride(
         name = "traits",
         joinTable = @JoinTable(
@@ -74,4 +66,45 @@ public class Background extends TaggableRuleElement {
     @JoinColumn(name = "feat_granted_id")
     private Feat featGranted;
 
+    public Background(Map<Skill, ProficiencyRank> skillChoices, Set<Lore> loreChoices, Set<Language> languages, Feat featGranted) {
+        this.skillChoices = skillChoices;
+        this.loreChoices = loreChoices;
+        this.languages = languages;
+        this.featGranted = featGranted;
+    }
+
+    protected Background() {
+    }
+
+    public Map<Skill, ProficiencyRank> getSkillChoices() {
+        return skillChoices;
+    }
+
+    public void setSkillChoices(Map<Skill, ProficiencyRank> skillChoices) {
+        this.skillChoices = skillChoices;
+    }
+
+    public Set<Lore> getLoreChoices() {
+        return loreChoices;
+    }
+
+    public void setLoreChoices(Set<Lore> loreChoices) {
+        this.loreChoices = loreChoices;
+    }
+
+    public Set<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(Set<Language> languages) {
+        this.languages = languages;
+    }
+
+    public Feat getFeatGranted() {
+        return featGranted;
+    }
+
+    public void setFeatGranted(Feat featGranted) {
+        this.featGranted = featGranted;
+    }
 }

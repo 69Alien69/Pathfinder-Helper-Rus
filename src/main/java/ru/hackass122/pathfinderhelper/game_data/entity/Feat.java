@@ -6,10 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.game_data.entity.effect.Effect;
 
 import java.util.HashSet;
@@ -17,10 +13,6 @@ import java.util.Set;
 
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @AssociationOverride(
         name = "traits",
         joinTable = @JoinTable(
@@ -45,6 +37,36 @@ public class Feat extends TaggableRuleElement {
     @Column
     private String prerequisites; // TODO: заменить на подходящую реализацию
 
+    public Feat(int level, Set<Effect> effects, String prerequisites) {
+        this.level = level;
+        this.effects = effects;
+        this.prerequisites = prerequisites;
+    }
 
+    protected Feat() {
+    }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public Set<Effect> getEffects() {
+        return effects;
+    }
+
+    public void setEffects(Set<Effect> effects) {
+        this.effects = effects;
+    }
+
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
+    }
 }

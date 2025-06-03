@@ -1,23 +1,16 @@
 package ru.hackass122.pathfinderhelper.user.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.hackass122.pathfinderhelper.character.entity.PlayerCharacter;
+import ru.hackass122.pathfinderhelper.character.model.entity.PlayerCharacter;
 
 import java.util.Collection;
 import java.util.Objects;
 import java.util.Set;
 
-@Getter
-@Setter
+
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name="users")
 public class User implements UserDetails {
     @Id
@@ -38,6 +31,17 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
+    public User(long id, String username, String password, Set<PlayerCharacter> playerCharacter, Set<Role> roles) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.playerCharacter = playerCharacter;
+        this.roles = roles;
+    }
+
+    protected User() {
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -76,4 +80,35 @@ public class User implements UserDetails {
         return username;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<PlayerCharacter> getPlayerCharacter() {
+        return playerCharacter;
+    }
+
+    public void setPlayerCharacter(Set<PlayerCharacter> playerCharacter) {
+        this.playerCharacter = playerCharacter;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

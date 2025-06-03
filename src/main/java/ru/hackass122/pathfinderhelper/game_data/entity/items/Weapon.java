@@ -10,10 +10,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.DamageType;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponCategory;
 import ru.hackass122.pathfinderhelper.common.enums.WeaponGroup;
@@ -25,10 +21,6 @@ import java.util.Set;
 
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Weapon extends Item {
 
     @Enumerated(EnumType.STRING)
@@ -71,5 +63,101 @@ public class Weapon extends Item {
     @JoinColumn(name = "material_id", nullable = false)
     private Material weaponMaterial;
 
+    public Weapon(WeaponType weaponType, WeaponCategory weaponCategory, WeaponGroup weaponGroup, int hands, Dice damage,
+                  DamageType damageType, int range, int reload, Set<Item> ammunition, Material weaponMaterial) {
+        this.weaponType = weaponType;
+        this.weaponCategory = weaponCategory;
+        this.weaponGroup = weaponGroup;
+        this.hands = hands;
+        this.damage = damage;
+        this.damageType = damageType;
+        this.range = range;
+        this.reload = reload;
+        this.ammunition = ammunition;
+        this.weaponMaterial = weaponMaterial;
+    }
+
+    protected Weapon() {
+    }
+
+    public WeaponType getWeaponType() {
+        return weaponType;
+    }
+
+    public void setWeaponType(WeaponType weaponType) {
+        this.weaponType = weaponType;
+    }
+
+    public WeaponCategory getWeaponCategory() {
+        return weaponCategory;
+    }
+
+    public void setWeaponCategory(WeaponCategory weaponCategory) {
+        this.weaponCategory = weaponCategory;
+    }
+
+    public WeaponGroup getWeaponGroup() {
+        return weaponGroup;
+    }
+
+    public void setWeaponGroup(WeaponGroup weaponGroup) {
+        this.weaponGroup = weaponGroup;
+    }
+
+    public int getHands() {
+        return hands;
+    }
+
+    public void setHands(int hands) {
+        this.hands = hands;
+    }
+
+    public Dice getDamage() {
+        return damage;
+    }
+
+    public void setDamage(Dice damage) {
+        this.damage = damage;
+    }
+
+    public DamageType getDamageType() {
+        return damageType;
+    }
+
+    public void setDamageType(DamageType damageType) {
+        this.damageType = damageType;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public void setRange(int range) {
+        this.range = range;
+    }
+
+    public int getReload() {
+        return reload;
+    }
+
+    public void setReload(int reload) {
+        this.reload = reload;
+    }
+
+    public Set<Item> getAmmunition() {
+        return ammunition;
+    }
+
+    public void setAmmunition(Set<Item> ammunition) {
+        this.ammunition = ammunition;
+    }
+
+    public Material getWeaponMaterial() {
+        return weaponMaterial;
+    }
+
+    public void setWeaponMaterial(Material weaponMaterial) {
+        this.weaponMaterial = weaponMaterial;
+    }
 
 }

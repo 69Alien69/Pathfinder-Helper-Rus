@@ -1,10 +1,8 @@
 package ru.hackass122.pathfinderhelper.common.enums;
 
-import lombok.Getter;
 
 import java.util.Optional;
 
-@Getter
 public enum ProficiencyRank {
     UNTRAINED(0),
     TRAINED(2),
@@ -34,5 +32,9 @@ public enum ProficiencyRank {
             case MASTER -> Optional.of(LEGENDARY);
             case LEGENDARY -> Optional.empty();
         };
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 }

@@ -15,10 +15,6 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.MapKeyEnumerated;
 import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.ArmorCategory;
 import ru.hackass122.pathfinderhelper.common.enums.Attribute;
 import ru.hackass122.pathfinderhelper.common.enums.ProficiencyRank;
@@ -33,10 +29,6 @@ import java.util.Map;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @AssociationOverride(
         name = "traits",
         joinTable = @JoinTable(
@@ -129,4 +121,113 @@ public class GameClass extends TaggableRuleElement{
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SpellCastingEntry> spellCastingEntries;
 
+    public GameClass(int hitDie, Set<Attribute> keyAbilities, ProficiencyRank initialPerception, Map<SaveThrow,
+            ProficiencyRank> initialSaveThrowsProficiencies, Map<Skill, ProficiencyRank> initialSkillProficiencies,
+                     Map<WeaponCategory, ProficiencyRank> initialWeaponProficiencies,
+                     Map<ArmorCategory, ProficiencyRank> initialArmorProficiencies, Set<Feat> gameClassFeats,
+                     Set<SpecialAbility> specialAbilities, boolean isSpellCaster,
+                     Set<SpellCastingEntry> spellCastingEntries) {
+        this.hitDie = hitDie;
+        this.keyAbilities = keyAbilities;
+        this.initialPerception = initialPerception;
+        this.initialSaveThrowsProficiencies = initialSaveThrowsProficiencies;
+        this.initialSkillProficiencies = initialSkillProficiencies;
+        this.initialWeaponProficiencies = initialWeaponProficiencies;
+        this.initialArmorProficiencies = initialArmorProficiencies;
+        this.gameClassFeats = gameClassFeats;
+        this.specialAbilities = specialAbilities;
+        this.isSpellCaster = isSpellCaster;
+        this.spellCastingEntries = spellCastingEntries;
+    }
+
+    protected GameClass() {
+    }
+
+    public int getHitDie() {
+        return hitDie;
+    }
+
+    public void setHitDie(int hitDie) {
+        this.hitDie = hitDie;
+    }
+
+    public Set<Attribute> getKeyAbilities() {
+        return keyAbilities;
+    }
+
+    public void setKeyAbilities(Set<Attribute> keyAbilities) {
+        this.keyAbilities = keyAbilities;
+    }
+
+    public ProficiencyRank getInitialPerception() {
+        return initialPerception;
+    }
+
+    public void setInitialPerception(ProficiencyRank initialPerception) {
+        this.initialPerception = initialPerception;
+    }
+
+    public Map<SaveThrow, ProficiencyRank> getInitialSaveThrowsProficiencies() {
+        return initialSaveThrowsProficiencies;
+    }
+
+    public void setInitialSaveThrowsProficiencies(Map<SaveThrow, ProficiencyRank> initialSaveThrowsProficiencies) {
+        this.initialSaveThrowsProficiencies = initialSaveThrowsProficiencies;
+    }
+
+    public Map<Skill, ProficiencyRank> getInitialSkillProficiencies() {
+        return initialSkillProficiencies;
+    }
+
+    public void setInitialSkillProficiencies(Map<Skill, ProficiencyRank> initialSkillProficiencies) {
+        this.initialSkillProficiencies = initialSkillProficiencies;
+    }
+
+    public Map<WeaponCategory, ProficiencyRank> getInitialWeaponProficiencies() {
+        return initialWeaponProficiencies;
+    }
+
+    public void setInitialWeaponProficiencies(Map<WeaponCategory, ProficiencyRank> initialWeaponProficiencies) {
+        this.initialWeaponProficiencies = initialWeaponProficiencies;
+    }
+
+    public Map<ArmorCategory, ProficiencyRank> getInitialArmorProficiencies() {
+        return initialArmorProficiencies;
+    }
+
+    public void setInitialArmorProficiencies(Map<ArmorCategory, ProficiencyRank> initialArmorProficiencies) {
+        this.initialArmorProficiencies = initialArmorProficiencies;
+    }
+
+    public Set<Feat> getGameClassFeats() {
+        return gameClassFeats;
+    }
+
+    public void setGameClassFeats(Set<Feat> gameClassFeats) {
+        this.gameClassFeats = gameClassFeats;
+    }
+
+    public Set<SpecialAbility> getSpecialAbilities() {
+        return specialAbilities;
+    }
+
+    public void setSpecialAbilities(Set<SpecialAbility> specialAbilities) {
+        this.specialAbilities = specialAbilities;
+    }
+
+    public boolean isSpellCaster() {
+        return isSpellCaster;
+    }
+
+    public void setSpellCaster(boolean spellCaster) {
+        isSpellCaster = spellCaster;
+    }
+
+    public Set<SpellCastingEntry> getSpellCastingEntries() {
+        return spellCastingEntries;
+    }
+
+    public void setSpellCastingEntries(Set<SpellCastingEntry> spellCastingEntries) {
+        this.spellCastingEntries = spellCastingEntries;
+    }
 }

@@ -1,0 +1,14 @@
+services:
+  postgres-pathfinder-helper:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: pathfinder_helper_db
+    ports:
+      - "5432:5432"
+
+volumes:
+  pathfinder_helper_db_data:
+

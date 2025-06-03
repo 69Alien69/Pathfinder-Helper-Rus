@@ -2,12 +2,8 @@ package ru.hackass122.pathfinderhelper.game_data.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Embeddable
-@Getter
-@NoArgsConstructor
 public class Bulk {
 
     @Column(name = "bulk_units", nullable = false)
@@ -15,6 +11,9 @@ public class Bulk {
 
     public static final Bulk NEGLIGIBLE  = new Bulk(0);
     public static final Bulk LIGHT = new Bulk(1);
+
+    public Bulk() {
+    }
 
     private Bulk(int units) {
         this.units = units;
@@ -38,6 +37,14 @@ public class Bulk {
 
     public int getFractionalUnits() {
         return units % 10;
+    }
+
+    public int getUnits() {
+        return units;
+    }
+
+    public void setUnits(int units) {
+        this.units = units;
     }
 
     @Override

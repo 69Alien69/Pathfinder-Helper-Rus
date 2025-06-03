@@ -4,17 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.ActionCost;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Action extends RuleElement {
 
     @Enumerated(EnumType.STRING)
@@ -27,7 +19,36 @@ public class Action extends RuleElement {
     @Column
     private String trigger; // TODO: подумать над заменой
 
+    public Action(ActionCost actionCost, String prerequisites, String trigger) {
+        this.actionCost = actionCost;
+        this.prerequisites = prerequisites;
+        this.trigger = trigger;
+    }
 
+    protected Action() {
+    }
 
+    public ActionCost getActionCost() {
+        return actionCost;
+    }
 
+    public void setActionCost(ActionCost actionCost) {
+        this.actionCost = actionCost;
+    }
+
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
+    }
+
+    public String getTrigger() {
+        return trigger;
+    }
+
+    public void setTrigger(String trigger) {
+        this.trigger = trigger;
+    }
 }

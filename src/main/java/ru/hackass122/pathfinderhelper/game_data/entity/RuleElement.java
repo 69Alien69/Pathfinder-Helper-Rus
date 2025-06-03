@@ -4,7 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-
 @MappedSuperclass
 public abstract class RuleElement extends AbstractPersistable<Long> {
 
@@ -31,5 +30,37 @@ public abstract class RuleElement extends AbstractPersistable<Long> {
     @Override
     public int hashCode() {
         return code != null ? code.hashCode() : 0;
+    }
+
+    public String getCode() {
+        return this.code;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean isDeprecated() {
+        return this.deprecated;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
     }
 }

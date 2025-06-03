@@ -13,10 +13,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.Size;
 
@@ -24,10 +20,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @AssociationOverride(
         name = "traits",
         joinTable = @JoinTable(
@@ -100,5 +92,82 @@ public class Ancestry extends TaggableRuleElement {
     )
     private Set<Feat> ancestryFeats = new HashSet<>();
 
+    public Ancestry(int hitPoints, Size size, int speed, AttributeModifiers attributeModifiers, Set<Language> languages,
+                    Set<SpecialAbility> specialAbilities, Set<Heritage> heritages, Set<Feat> ancestryFeats) {
+        this.hitPoints = hitPoints;
+        this.size = size;
+        this.speed = speed;
+        this.attributeModifiers = attributeModifiers;
+        this.languages = languages;
+        this.specialAbilities = specialAbilities;
+        this.heritages = heritages;
+        this.ancestryFeats = ancestryFeats;
+    }
 
+    protected Ancestry() {
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(int hitPoints) {
+        this.hitPoints = hitPoints;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public AttributeModifiers getAttributeModifiers() {
+        return attributeModifiers;
+    }
+
+    public void setAttributeModifiers(AttributeModifiers attributeModifiers) {
+        this.attributeModifiers = attributeModifiers;
+    }
+
+    public Set<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(Set<Language> languages) {
+        this.languages = languages;
+    }
+
+    public Set<SpecialAbility> getSpecialAbilities() {
+        return specialAbilities;
+    }
+
+    public void setSpecialAbilities(Set<SpecialAbility> specialAbilities) {
+        this.specialAbilities = specialAbilities;
+    }
+
+    public Set<Heritage> getHeritages() {
+        return heritages;
+    }
+
+    public void setHeritages(Set<Heritage> heritages) {
+        this.heritages = heritages;
+    }
+
+    public Set<Feat> getAncestryFeats() {
+        return ancestryFeats;
+    }
+
+    public void setAncestryFeats(Set<Feat> ancestryFeats) {
+        this.ancestryFeats = ancestryFeats;
+    }
 }

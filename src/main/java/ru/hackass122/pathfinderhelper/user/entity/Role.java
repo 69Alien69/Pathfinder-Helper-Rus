@@ -1,18 +1,10 @@
 package ru.hackass122.pathfinderhelper.user.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 import jakarta.persistence.*;
 
-@Getter
-@Setter
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 public class Role implements GrantedAuthority {
 
     @Id
@@ -22,8 +14,28 @@ public class Role implements GrantedAuthority {
     @Column(nullable = false, unique = true)
     private String authority;
 
+    public Role(Long id, String authority) {
+        this.id = id;
+        this.authority = authority;
+    }
+
+    protected Role() {
+    }
+
     @Override
     public String getAuthority() {
         return authority;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 }
