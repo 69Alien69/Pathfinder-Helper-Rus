@@ -24,5 +24,6 @@ public record AncestryResponseDto(Long id,
                                   Set<SpecialAbility> specialAbilities,
                                   Set<Heritage> heritages,
                                   Set<Feat> ancestryFeats,
-                                  Set<Trait> traits) {
+                                  Set<Trait> traits,
+                                  Boolean deprecated) { // TODO: заменить сущности на DTO
 }

@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1748896765730-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: game_class_difficulty_class_proficiency
+                  type: SMALLINT
+              - column:
+                  name: perception_proficiency
+                  type: SMALLINT
+              - column:
+                  name: size
+                  type: SMALLINT
+              - column:
+                  name: weaknesses
+                  type: VARCHAR(255)
+            tableName: player_character
+  - changeSet:
+      id: 1748896765730-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: character_id
+            baseTableName: character_armor_ranks
+            constraintName: fk_character_armor_ranks_on_player_character
+            referencedColumnNames: id
+            referencedTableName: player_character
+  - changeSet:
+      id: 1748896765730-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: background_notes
+            tableName: player_character
+        - dropColumn:
+            columnName: defenses_notes
+            tableName: player_character
+        - dropColumn:
+            columnName: game_class_difficulty_class
+            tableName: player_character
+        - dropColumn:
+            columnName: game_class_notes
+            tableName: player_character
+        - dropColumn:
+            columnName: perception
+            tableName: player_character
+        - dropColumn:
+            columnName: perception_notes
+            tableName: player_character
+

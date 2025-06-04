@@ -93,7 +93,9 @@ public class Ancestry extends TaggableRuleElement {
     private Set<Feat> ancestryFeats = new HashSet<>();
 
     public Ancestry(int hitPoints, Size size, int speed, AttributeModifiers attributeModifiers, Set<Language> languages,
-                    Set<SpecialAbility> specialAbilities, Set<Heritage> heritages, Set<Feat> ancestryFeats) {
+                    Set<SpecialAbility> specialAbilities, Set<Heritage> heritages, Set<Feat> ancestryFeats,
+                    Set<Trait> traits, String code, String name, String description, boolean deprecated, Long id) {
+        super(traits, code, name, description, deprecated, id);
         this.hitPoints = hitPoints;
         this.size = size;
         this.speed = speed;
@@ -170,4 +172,5 @@ public class Ancestry extends TaggableRuleElement {
     public void setAncestryFeats(Set<Feat> ancestryFeats) {
         this.ancestryFeats = ancestryFeats;
     }
+
 }

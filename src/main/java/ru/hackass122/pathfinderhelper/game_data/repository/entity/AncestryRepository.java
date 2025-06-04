@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface AncestryRepository extends JpaRepository<Ancestry, Long> {
 
-    Optional<Ancestry>getAncestryByCode(String code);
+    Optional<Ancestry>findAncestryByCode(String code);
 }

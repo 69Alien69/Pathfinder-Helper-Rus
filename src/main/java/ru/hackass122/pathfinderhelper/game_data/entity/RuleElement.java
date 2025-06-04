@@ -7,6 +7,17 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @MappedSuperclass
 public abstract class RuleElement extends AbstractPersistable<Long> {
 
+    public RuleElement(String code, String name, String description, boolean deprecated, Long id) {
+        super.setId(id);
+        this.code = code;
+        this.name = name;
+        this.description = description;
+        this.deprecated = deprecated;
+    }
+
+    public RuleElement() {
+    }
+
     @Column(unique = true, nullable = false, updatable = false)
     private String code;
 

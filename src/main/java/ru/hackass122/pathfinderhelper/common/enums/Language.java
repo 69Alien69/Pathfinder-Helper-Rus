@@ -13,7 +13,7 @@ public enum Language {
     ORCISH,
     SAKVROTH,
     AKLO,
-    CHTONIAN,
+    CHTHONIAN,
     DIABOLIC,
     EMPYREAN,
     KHOLO,
