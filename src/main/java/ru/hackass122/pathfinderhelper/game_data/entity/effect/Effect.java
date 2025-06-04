@@ -18,6 +18,13 @@ public abstract class Effect extends RuleElement {
 
     public abstract void apply(PlayerCharacter character);
 
+    public Effect(String code, String name, String description, boolean legacy, Long id) {
+        super(code, name, description, legacy, id);
+    }
+
+    public Effect() {
+    }
+
 
 
 }

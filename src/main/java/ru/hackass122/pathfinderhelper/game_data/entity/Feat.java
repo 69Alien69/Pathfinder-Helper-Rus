@@ -37,7 +37,9 @@ public class Feat extends TaggableRuleElement {
     @Column
     private String prerequisites; // TODO: заменить на подходящую реализацию
 
-    public Feat(int level, Set<Effect> effects, String prerequisites) {
+    public Feat(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id, int level,
+                Set<Effect> effects, String prerequisites) {
+        super(traits, code, name, description, legacy, id);
         this.level = level;
         this.effects = effects;
         this.prerequisites = prerequisites;

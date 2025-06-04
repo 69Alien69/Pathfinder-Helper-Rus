@@ -3,10 +3,6 @@ package ru.hackass122.pathfinderhelper.game_data.dto.request;
 import ru.hackass122.pathfinderhelper.common.enums.Attribute;
 import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.Size;
-import ru.hackass122.pathfinderhelper.game_data.entity.Feat;
-import ru.hackass122.pathfinderhelper.game_data.entity.Heritage;
-import ru.hackass122.pathfinderhelper.game_data.entity.SpecialAbility;
-import ru.hackass122.pathfinderhelper.game_data.entity.Trait;
 
 import java.util.Set;
 
@@ -18,9 +14,9 @@ public record AncestryCreationRequestDto(String name,
                                          Set<Attribute> boosts,
                                          Set<Attribute> flaws,
                                          Set<Language> languages,
-                                         Set<SpecialAbility> specialAbilities,
-                                         Set<Heritage> heritages,
-                                         Set<Feat> ancestryFeats,
-                                         Set<Trait> traits,
-                                         Boolean deprecated) { // TODO: заменить сущности на DTO
+                                         Set<String> specialAbilitiesCodes,
+                                         Set<String> heritagesCodes,
+                                         Set<String> ancestryFeatsCodes,
+                                         Set<String> traitsCodes,
+                                         Boolean legacy) {
 }

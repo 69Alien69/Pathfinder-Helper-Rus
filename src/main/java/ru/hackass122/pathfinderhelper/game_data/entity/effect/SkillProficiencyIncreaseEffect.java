@@ -24,7 +24,9 @@ public class SkillProficiencyIncreaseEffect extends Effect {
     @Enumerated(EnumType.STRING)
     private Skill targetSkill;
 
-    public SkillProficiencyIncreaseEffect(Skill targetSkill) {
+    public SkillProficiencyIncreaseEffect(String code, String name, String description, boolean legacy, Long id,
+                                          Skill targetSkill) {
+        super(code, name, description, legacy, id);
         this.targetSkill = targetSkill;
     }
 
@@ -51,5 +53,13 @@ public class SkillProficiencyIncreaseEffect extends Effect {
         Optional<ProficiencyRank> next = skillProficiencyRankMap.get(targetSkill).next();
         skillProficiencyRankMap.put(targetSkill, next.orElseThrow(IllegalStateException::new)); // TODO реализовать специальный exception и заменить
         character.setSkills(skillProficiencyRankMap);
+    }
+
+    public Skill getTargetSkill() {
+        return targetSkill;
+    }
+
+    public void setTargetSkill(Skill targetSkill) {
+        this.targetSkill = targetSkill;
     }
 }

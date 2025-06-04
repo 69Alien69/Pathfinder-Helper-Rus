@@ -1,0 +1,319 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1749067479525-19
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: special_ability_traits
+            constraintName: fk_speabitra_on_special_ability
+  - changeSet:
+      id: 1749067479525-20
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: special_ability_traits
+            constraintName: fk_speabitra_on_trait
+  - changeSet:
+      id: 1749067479525-21
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: special_ability
+            constraintName: fk_specialability_on_item
+  - changeSet:
+      id: 1749067479525-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: effect_id
+                  type: BIGINT
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: special_ability
+  - changeSet:
+      id: 1749067479525-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: action
+  - changeSet:
+      id: 1749067479525-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: ancestry
+  - changeSet:
+      id: 1749067479525-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: background
+  - changeSet:
+      id: 1749067479525-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: condition
+  - changeSet:
+      id: 1749067479525-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: effect
+  - changeSet:
+      id: 1749067479525-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: feat
+  - changeSet:
+      id: 1749067479525-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: game_class
+  - changeSet:
+      id: 1749067479525-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: heritage
+  - changeSet:
+      id: 1749067479525-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: item
+  - changeSet:
+      id: 1749067479525-11
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: lore
+  - changeSet:
+      id: 1749067479525-13
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: spell
+  - changeSet:
+      id: 1749067479525-14
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+              - column:
+                  name: trait_category
+                  type: SMALLINT
+            tableName: trait
+  - changeSet:
+      id: 1749067479525-16
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: effect_id
+            baseTableName: special_ability
+            constraintName: FK_SPECIALABILITY_ON_EFFECT
+            referencedColumnNames: id
+            referencedTableName: effect
+  - changeSet:
+      id: 1749067479525-24
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropTable:
+            cascadeConstraints: true
+            tableName: special_ability_traits
+  - changeSet:
+      id: 1749067479525-25
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: ability_type
+            tableName: special_ability
+        - dropColumn:
+            columnName: actions_required
+            tableName: special_ability
+        - dropColumn:
+            columnName: deprecated
+            tableName: special_ability
+        - dropColumn:
+            columnName: frequency
+            tableName: special_ability
+        - dropColumn:
+            columnName: grant_quantity
+            tableName: special_ability
+        - dropColumn:
+            columnName: item_id
+            tableName: special_ability
+        - dropColumn:
+            columnName: prerequisites
+            tableName: special_ability
+        - dropColumn:
+            columnName: trigger
+            tableName: special_ability
+  - changeSet:
+      id: 1749067479525-27
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: action
+  - changeSet:
+      id: 1749067479525-28
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: ancestry
+  - changeSet:
+      id: 1749067479525-29
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: background
+  - changeSet:
+      id: 1749067479525-30
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: condition
+  - changeSet:
+      id: 1749067479525-31
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: effect
+  - changeSet:
+      id: 1749067479525-32
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: feat
+  - changeSet:
+      id: 1749067479525-33
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: game_class
+  - changeSet:
+      id: 1749067479525-34
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: heritage
+  - changeSet:
+      id: 1749067479525-35
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: item
+  - changeSet:
+      id: 1749067479525-36
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: lore
+  - changeSet:
+      id: 1749067479525-38
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: spell
+  - changeSet:
+      id: 1749067479525-39
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: deprecated
+            tableName: trait
+

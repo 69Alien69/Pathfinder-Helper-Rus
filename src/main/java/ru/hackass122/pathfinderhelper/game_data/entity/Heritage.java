@@ -104,10 +104,12 @@ public class Heritage extends TaggableRuleElement {
     )
     private Set<Feat> heritageFeats = new HashSet<>();
 
-    public Heritage(int hitPointModifier, Size size, AttributeModifiers attributeModifiers,
+    public Heritage(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id,
+                    int hitPointModifier, Size size, AttributeModifiers attributeModifiers,
                     Set<SpecialAbility> specialAbilities, Set<Language> languages,
-                    Map<Skill, ProficiencyRank> skillProficiencies, String resistances, int acBonus,
-                    Set<Feat> heritageFeats) {
+                    Map<Skill, ProficiencyRank> skillProficiencies, String resistances,
+                    int acBonus, Set<Feat> heritageFeats) {
+        super(traits, code, name, description, legacy, id);
         this.hitPointModifier = hitPointModifier;
         this.size = size;
         this.attributeModifiers = attributeModifiers;

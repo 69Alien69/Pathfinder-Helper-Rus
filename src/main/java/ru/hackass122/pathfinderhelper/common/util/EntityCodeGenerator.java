@@ -12,7 +12,10 @@ public class EntityCodeGenerator {
                 .replaceAll("^_+|_+$", "");
     }
 
-    public static String generateForOfficialComponent (String name, String type) {
+    public static String generateForOfficialComponent (String name, String type, boolean isLegacy) {
+        if (isLegacy) {
+            return String.format("%s_%s", slugify(name, type), "legacy");
+        }
         return slugify(name, type);
     }
 

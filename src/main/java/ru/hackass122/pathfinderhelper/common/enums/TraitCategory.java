@@ -1,0 +1,33 @@
+package ru.hackass122.pathfinderhelper.common.enums;
+
+public enum TraitCategory {
+    AFFLICTION,
+    ANCESTRY,
+    ARMOR,
+    CLASS,
+    CLASS_SPECIFIC,
+    CREATURE_TYPE,
+    ELEMENTAL,
+    ENERGY,
+    EQUIPMENT,
+    FEAT,
+    HAZARD,
+    KINGDOM,
+    KINGDOM_EVENT,
+    KINGDOM_SETTLEMENT,
+    KINGDOM_WARFARE,
+    MECHANICS,
+    MONSTER,
+    MYTHIC,
+    PLANAR,
+    POISON,
+    RARITY,
+    SCHOOL,
+    SENSE,
+    SETTLEMENT,
+    SHIELD,
+    TRADITION,
+    VARIANT_RULES,
+    WEAPON,
+    OTHER;
+}

@@ -7,12 +7,12 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @MappedSuperclass
 public abstract class RuleElement extends AbstractPersistable<Long> {
 
-    public RuleElement(String code, String name, String description, boolean deprecated, Long id) {
+    public RuleElement(String code, String name, String description, boolean legacy, Long id) {
         super.setId(id);
         this.code = code;
         this.name = name;
         this.description = description;
-        this.deprecated = deprecated;
+        this.legacy = legacy;
     }
 
     public RuleElement() {
@@ -28,7 +28,7 @@ public abstract class RuleElement extends AbstractPersistable<Long> {
     private String description;
 
     @Column
-    private boolean deprecated;
+    private boolean legacy;
 
     @Override
     public boolean equals(Object o) {
@@ -55,8 +55,8 @@ public abstract class RuleElement extends AbstractPersistable<Long> {
         return this.description;
     }
 
-    public boolean isDeprecated() {
-        return this.deprecated;
+    public boolean isLegacy() {
+        return this.legacy;
     }
 
     public void setCode(String code) {
@@ -71,7 +71,7 @@ public abstract class RuleElement extends AbstractPersistable<Long> {
         this.description = description;
     }
 
-    public void setDeprecated(boolean deprecated) {
-        this.deprecated = deprecated;
+    public void setLegacy(boolean legacy) {
+        this.legacy = legacy;
     }
 }
