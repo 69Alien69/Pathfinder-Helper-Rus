@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.TraitCreationRequestDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
@@ -14,7 +15,8 @@ import ru.hackass122.pathfinderhelper.game_data.service.TraitService;
 
 import java.util.Set;
 
-@RestController("/api/game_data/trait")
+@RestController
+@RequestMapping("/api/game_data/trait")
 public class TraitController {
 
     private final TraitService traitService;
