@@ -70,7 +70,8 @@ public class AncestryServiceImpl implements AncestryService {
         Set<Size> sizes = EnumSet.allOf(Size.class);
         Set<Attribute> attributes = EnumSet.allOf(Attribute.class);
         Set<Language> languages = EnumSet.allOf(Language.class);
-        Set<SpecialAbilityResponseDto> specialAbilityResponseDtos = specialAbilityService.getAllSpecialAbilityDtos();
+        Set<SpecialAbilityResponseDto> specialAbilityResponseDtos =
+                specialAbilityService.getAllSpecialAbilityResponseDtos();
         Set<TraitResponseDto> traitResponseDtos = traitService.getAllTraitResponseDtos();
         return new AncestryCreationResponseDto(sizes, attributes,
                 languages, specialAbilityResponseDtos, traitResponseDtos);

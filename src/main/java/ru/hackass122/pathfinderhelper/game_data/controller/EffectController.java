@@ -45,7 +45,7 @@ public class EffectController {
 
     @PostMapping("/create")
     public ResponseEntity<EffectResponseDto> createEffect(@RequestBody EffectCreationRequestDto effectCreationRequestDto) {
-        EffectResponseDto effectResponseDto = effectService.createFeat(effectCreationRequestDto);
+        EffectResponseDto effectResponseDto = effectService.createEffect(effectCreationRequestDto);
         return ResponseEntity.ok(effectResponseDto);
     }
 }

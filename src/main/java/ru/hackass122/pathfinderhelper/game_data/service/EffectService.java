@@ -12,5 +12,6 @@ public interface EffectService {
     Set<Effect> getEffectsByCodes(Set<String> codes);
     EffectResponseDto getEffectResponseDtoByCode(String code);
     EffectCreationResponseDto getEffectCreationOptions();
-    EffectResponseDto createFeat(EffectCreationRequestDto effectCreationRequestDto);
+    EffectResponseDto createEffect(EffectCreationRequestDto effectCreationRequestDto);
+    Effect getEffectByCode(String code);
 }

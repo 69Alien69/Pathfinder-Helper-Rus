@@ -8,4 +8,5 @@ import java.util.Set;
 
 public interface SpecialAbilityRepository extends JpaRepository<SpecialAbility, Long> {
     Optional<Set<SpecialAbility>> findByCodeIn(Set<String> codes);
+    Optional<SpecialAbility> findSpecialAbilityByCode(String code);
 }

@@ -47,7 +47,7 @@ public class EffectServiceImpl implements EffectService {
 
     @Override
     public EffectResponseDto getEffectResponseDtoByCode(String code) {
-        Effect effect = effectRepository.findEffectByCode(code).orElseThrow();
+        Effect effect = getEffectByCode(code);
         return effectDtoMapper.entityToResponseDto(effect);
     }
 
@@ -62,12 +62,17 @@ public class EffectServiceImpl implements EffectService {
     }
 
     @Override
-    public EffectResponseDto createFeat(EffectCreationRequestDto effectCreationRequestDto) {
+    public EffectResponseDto createEffect(EffectCreationRequestDto effectCreationRequestDto) {
         Effect effect = EffectFactory.createEffectFrom(effectCreationRequestDto.name(),
                 effectCreationRequestDto.description(),
                 effectCreationRequestDto.legacy(),
                 effectCreationRequestDto.effectType(),
                 effectCreationRequestDto.data());
         return effectDtoMapper.entityToResponseDto(effect);
+    }
+
+    @Override
+    public Effect getEffectByCode(String code) {
+        return effectRepository.findEffectByCode(code).orElseThrow();
     }
 }
