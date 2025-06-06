@@ -13,7 +13,7 @@ import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.FeatCreati
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.service.FeatService;
 
-import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/game_data/feat")
@@ -26,8 +26,8 @@ public class FeatController {
     }
 
     @GetMapping
-    public ResponseEntity<List<FeatResponseDto>> getAllFeats() {
-        List<FeatResponseDto> featResponseDtos = featService.getAllFeatResponseDtos();
+    public ResponseEntity<Set<FeatResponseDto>> getAllFeats() {
+        Set<FeatResponseDto> featResponseDtos = featService.getAllFeatResponseDtos();
         return ResponseEntity.ok(featResponseDtos);
     }
 

@@ -7,5 +7,6 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface HeritageRepository extends JpaRepository<Heritage, Long> {
-    Optional<Set<Heritage>> findHeritageByCodeIn(Set<String> codes);
+    Set<Heritage> findHeritageByCodeIn(Set<String> codes);
+    Optional<Heritage> findHeritageByCode(String code);
 }

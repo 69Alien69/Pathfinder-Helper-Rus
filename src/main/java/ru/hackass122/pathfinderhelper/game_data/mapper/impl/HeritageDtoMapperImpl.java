@@ -1,10 +1,12 @@
 package ru.hackass122.pathfinderhelper.game_data.mapper.impl;
 
 import org.springframework.stereotype.Component;
+import ru.hackass122.pathfinderhelper.game_data.dto.request.HeritageCreationRequestDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.HeritageResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.SpecialAbilityResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.entity.AttributeModifiers;
 import ru.hackass122.pathfinderhelper.game_data.entity.Feat;
 import ru.hackass122.pathfinderhelper.game_data.entity.Heritage;
 import ru.hackass122.pathfinderhelper.game_data.entity.SpecialAbility;
@@ -13,6 +15,9 @@ import ru.hackass122.pathfinderhelper.game_data.mapper.FeatDtoMapper;
 import ru.hackass122.pathfinderhelper.game_data.mapper.HeritageDtoMapper;
 import ru.hackass122.pathfinderhelper.game_data.mapper.SpecialAbilityDtoMapper;
 import ru.hackass122.pathfinderhelper.game_data.mapper.TraitDtoMapper;
+import ru.hackass122.pathfinderhelper.game_data.service.FeatService;
+import ru.hackass122.pathfinderhelper.game_data.service.SpecialAbilityService;
+import ru.hackass122.pathfinderhelper.game_data.service.TraitService;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,10 +29,19 @@ public class HeritageDtoMapperImpl implements HeritageDtoMapper {
     private final SpecialAbilityDtoMapper specialAbilityDtoMapper;
     private final FeatDtoMapper featDtoMapper;
 
-    public HeritageDtoMapperImpl(TraitDtoMapper traitDtoMapper, SpecialAbilityDtoMapper specialAbilityDtoMapper, FeatDtoMapper featDtoMapper) {
+    private final TraitService traitService;
+    private final SpecialAbilityService specialAbilityService;
+    private final FeatService featService;
+
+    public HeritageDtoMapperImpl(TraitDtoMapper traitDtoMapper, SpecialAbilityDtoMapper specialAbilityDtoMapper,
+                                 FeatDtoMapper featDtoMapper, TraitService traitService,
+                                 SpecialAbilityService specialAbilityService, FeatService featService) {
         this.traitDtoMapper = traitDtoMapper;
         this.specialAbilityDtoMapper = specialAbilityDtoMapper;
         this.featDtoMapper = featDtoMapper;
+        this.traitService = traitService;
+        this.specialAbilityService = specialAbilityService;
+        this.featService = featService;
     }
 
     @Override
@@ -63,5 +77,32 @@ public class HeritageDtoMapperImpl implements HeritageDtoMapper {
                 heritage.getResistances(),
                 heritage.getAcBonus(),
                 featResponseDtos);
+    }
+
+    @Override
+    public Heritage creationRequestDtoToEntity(HeritageCreationRequestDto heritageCreationRequestDto) {
+
+        Set<Trait> traits = traitService.getTraitByCodes(heritageCreationRequestDto.traitCodes());
+        AttributeModifiers attributeModifiers = new AttributeModifiers(heritageCreationRequestDto.boosts(),
+                heritageCreationRequestDto.flaws());
+        Set<SpecialAbility> specialAbilities =
+                specialAbilityService.getSpecialAbilitiesByCodes(heritageCreationRequestDto.specialAbilityCodes());
+        Set<Feat> feats = featService.getFeatsByCodes(heritageCreationRequestDto.heritageFeatCodes());
+
+        return new Heritage(traits,
+                null,
+                heritageCreationRequestDto.name(),
+                heritageCreationRequestDto.description(),
+                heritageCreationRequestDto.legacy(),
+                null,
+                heritageCreationRequestDto.hitPointModifier(),
+                heritageCreationRequestDto.size(),
+                attributeModifiers,
+                specialAbilities,
+                heritageCreationRequestDto.languages(),
+                heritageCreationRequestDto.skillProficiencies(),
+                heritageCreationRequestDto.resistances(),
+                heritageCreationRequestDto.acBonus(),
+                feats);
     }
 }

@@ -16,7 +16,7 @@ import ru.hackass122.pathfinderhelper.game_data.service.EffectService;
 import ru.hackass122.pathfinderhelper.game_data.service.FeatService;
 import ru.hackass122.pathfinderhelper.game_data.service.TraitService;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -45,9 +45,9 @@ public class FeatServiceImpl implements FeatService {
     }
 
     @Override
-    public List<FeatResponseDto> getAllFeatResponseDtos() {
+    public Set<FeatResponseDto> getAllFeatResponseDtos() {
         List<Feat> feats = featRepository.findAll();
-        List<FeatResponseDto> featResponseDtos = new ArrayList<>(feats.size());
+        Set<FeatResponseDto> featResponseDtos = new HashSet<>();
         for (Feat feat : feats) {
             featResponseDtos.add(featDtoMapper.entityToResponseDto(feat));
         }
