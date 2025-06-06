@@ -26,7 +26,7 @@ public class EffectController {
     }
 
     @GetMapping
-    public ResponseEntity<Set<EffectResponseDto>> getAllFeats() {
+    public ResponseEntity<Set<EffectResponseDto>> getAllEffects() {
         Set<EffectResponseDto> effectResponseDtos = effectService.getAllEffectResponseDtos();
         return ResponseEntity.ok(effectResponseDtos);
     }
@@ -44,7 +44,7 @@ public class EffectController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<EffectResponseDto> createFeat(@RequestBody EffectCreationRequestDto effectCreationRequestDto) {
+    public ResponseEntity<EffectResponseDto> createEffect(@RequestBody EffectCreationRequestDto effectCreationRequestDto) {
         EffectResponseDto effectResponseDto = effectService.createFeat(effectCreationRequestDto);
         return ResponseEntity.ok(effectResponseDto);
     }

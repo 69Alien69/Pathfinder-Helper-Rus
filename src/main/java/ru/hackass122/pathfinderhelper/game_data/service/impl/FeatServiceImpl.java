@@ -72,7 +72,7 @@ public class FeatServiceImpl implements FeatService {
 
     @Override
     public FeatResponseDto createFeat(FeatCreationRequestDto featCreationRequestDto) {
-        Set<Trait> traits = traitService.getTraitsByCodes(featCreationRequestDto.traitCodes());
+        Set<Trait> traits = traitService.getTraitByCodes(featCreationRequestDto.traitCodes());
         Set<Effect> effects = effectService.getEffectsByCodes(featCreationRequestDto.effectCodes());
 
         String code = EntityCodeGenerator.generateForOfficialComponent(featCreationRequestDto.name(),

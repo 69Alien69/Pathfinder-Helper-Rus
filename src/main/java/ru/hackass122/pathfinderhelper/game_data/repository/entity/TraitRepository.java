@@ -8,4 +8,5 @@ import java.util.Set;
 
 public interface TraitRepository extends JpaRepository<Trait, Long> {
     Optional<Set<Trait>> findTraitByCodeIn(Set<String> codes);
+    Optional<Trait> findTraitByCode(String code);
 }

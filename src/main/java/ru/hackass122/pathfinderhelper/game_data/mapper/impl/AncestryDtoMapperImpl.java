@@ -106,7 +106,7 @@ public class AncestryDtoMapperImpl implements AncestryDtoMapper {
 
         Set<Feat> ancestryFeats = featService.getFeatsByCodes(ancestryCreationRequestDto.ancestryFeatsCodes());
 
-        Set<Trait> traits = traitService.getTraitsByCodes(ancestryCreationRequestDto.traitsCodes());
+        Set<Trait> traits = traitService.getTraitByCodes(ancestryCreationRequestDto.traitsCodes());
 
         return new Ancestry(ancestryCreationRequestDto.hitPoints(),
                 ancestryCreationRequestDto.size(),
