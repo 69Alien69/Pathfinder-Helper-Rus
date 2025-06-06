@@ -1,4 +1,7 @@
-package ru.hackass122.pathfinderhelper.game_data.dto.response;
+package ru.hackass122.pathfinderhelper.game_data.dto.response.creation;
+
+import ru.hackass122.pathfinderhelper.game_data.dto.response.EffectResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
 
 import java.util.Set;
 

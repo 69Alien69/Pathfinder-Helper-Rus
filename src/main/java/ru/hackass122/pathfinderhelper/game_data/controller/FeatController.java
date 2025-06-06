@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.FeatCreationRequestDto;
-import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatCreationResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.FeatCreationResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.service.FeatService;
 

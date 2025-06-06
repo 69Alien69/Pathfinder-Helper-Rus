@@ -1,7 +1,7 @@
 package ru.hackass122.pathfinderhelper.game_data.service;
 
 import ru.hackass122.pathfinderhelper.game_data.dto.request.FeatCreationRequestDto;
-import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatCreationResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.FeatCreationResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.entity.Feat;
 

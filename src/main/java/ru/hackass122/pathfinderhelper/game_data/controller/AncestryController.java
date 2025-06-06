@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.AncestryCreationRequestDto;
-import ru.hackass122.pathfinderhelper.game_data.dto.response.AncestryCreationResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.AncestryCreationResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.AncestryResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.service.AncestryService;
 

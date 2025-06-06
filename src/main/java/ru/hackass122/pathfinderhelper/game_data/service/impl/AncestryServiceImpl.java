@@ -6,7 +6,7 @@ import ru.hackass122.pathfinderhelper.common.enums.Language;
 import ru.hackass122.pathfinderhelper.common.enums.Size;
 import ru.hackass122.pathfinderhelper.common.util.EntityCodeGenerator;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.AncestryCreationRequestDto;
-import ru.hackass122.pathfinderhelper.game_data.dto.response.AncestryCreationResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.AncestryCreationResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.AncestryResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.SpecialAbilityResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
