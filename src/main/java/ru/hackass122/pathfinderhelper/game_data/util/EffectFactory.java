@@ -26,7 +26,7 @@ public class EffectFactory {
             case EQUIPMENT_ACCESS -> null;
             case REQUIREMENT_REMOVAL -> null;
             case SKILL_PROFICIENCY_INCREASE ->
-                    createSkillProficiencyIncrease(name, description, legacy, effectType, data);
+                    createSkillProficiencyIncrease(name, description, legacy, data);
             case SAVE_THROW_PROFICIENCY_INCREASE -> null;
             case PERCEPTION_PROFICIENCY_INCREASE -> null;
             case WEAPON_PROFICIENCY_INCREASE -> null;
@@ -36,7 +36,7 @@ public class EffectFactory {
         };
     }
 
-    private static Effect createSkillProficiencyIncrease(String name, String description, Boolean legacy, EffectType effectType,
+    private static Effect createSkillProficiencyIncrease(String name, String description, Boolean legacy,
                                                          Map<String, Object> data) {
         String code = EntityCodeGenerator.generateForOfficialComponent(name, TYPE, legacy);
         return new SkillProficiencyIncreaseEffect(code,
