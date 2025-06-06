@@ -8,4 +8,5 @@ import java.util.Set;
 
 public interface FeatRepository extends JpaRepository<Feat, Long> {
     Optional<Set<Feat>> findFeatByCodeIn(Set<String> codes);
+    Optional<Feat> findFeatByCode(String code);
 }

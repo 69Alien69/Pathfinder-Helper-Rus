@@ -24,7 +24,7 @@ public class AncestryController {
     }
 
     @GetMapping("/{ancestryCode}")
-    public ResponseEntity<AncestryResponseDto> getAncestryDtoByAncestryCode(@PathVariable String ancestryCode) {
+    public ResponseEntity<AncestryResponseDto> getAncestryByAncestryCode(@PathVariable String ancestryCode) {
         AncestryResponseDto ancestryResponseDto = ancestryService.getAncestryDtoByCode(ancestryCode);
         return ResponseEntity.ok(ancestryResponseDto);
     }
