@@ -1,0 +1,130 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1749298422067-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: attribute_prerequisite_seq
+            startValue: 1
+  - changeSet:
+      id: 1749298422067-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: bonus_effect_seq
+            startValue: 1
+  - changeSet:
+      id: 1749298422067-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: prerequisite_seq
+            startValue: 1
+  - changeSet:
+      id: 1749298422067-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_attributeprerequisite
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: required_value
+                  type: INT
+              - column:
+                  name: attribute
+                  type: SMALLINT
+            tableName: attribute_prerequisite
+  - changeSet:
+      id: 1749298422067-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_bonuseffect
+                  name: id
+                  type: BIGINT
+            tableName: bonus_effect
+  - changeSet:
+      id: 1749298422067-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_prerequisite
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: prerequisite_type
+                  type: VARCHAR(31)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: legacy
+                  type: BOOLEAN
+            tableName: prerequisite
+  - changeSet:
+      id: 1749298422067-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: code
+            constraintName: uc_prerequisite_code
+            tableName: prerequisite
+  - changeSet:
+      id: 1749298422067-8
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: attribute_prerequisite
+            constraintName: FK_ATTRIBUTEPREREQUISITE_ON_ID
+            referencedColumnNames: id
+            referencedTableName: prerequisite
+  - changeSet:
+      id: 1749298422067-9
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: id
+            baseTableName: bonus_effect
+            constraintName: FK_BONUSEFFECT_ON_ID
+            referencedColumnNames: id
+            referencedTableName: effect
+
