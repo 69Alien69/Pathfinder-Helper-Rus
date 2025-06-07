@@ -4,7 +4,11 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToMany;
 import ru.hackass122.pathfinderhelper.common.enums.ActionCost;
+import ru.hackass122.pathfinderhelper.game_data.entity.prerequisite.Prerequisite;
+
+import java.util.Set;
 
 @Entity
 public class Action extends RuleElement {
@@ -14,12 +18,13 @@ public class Action extends RuleElement {
     private ActionCost actionCost;
 
     @Column
-    private String prerequisites; // TODO: подумать над заменой
+    @ManyToMany
+    private Set<Prerequisite> prerequisites;
 
     @Column
     private String trigger; // TODO: подумать над заменой
 
-    public Action(ActionCost actionCost, String prerequisites, String trigger) {
+    public Action(ActionCost actionCost, Set<Prerequisite> prerequisites, String trigger) {
         this.actionCost = actionCost;
         this.prerequisites = prerequisites;
         this.trigger = trigger;
@@ -36,11 +41,11 @@ public class Action extends RuleElement {
         this.actionCost = actionCost;
     }
 
-    public String getPrerequisites() {
+    public Set<Prerequisite> getPrerequisites() {
         return prerequisites;
     }
 
-    public void setPrerequisites(String prerequisites) {
+    public void setPrerequisites(Set<Prerequisite> prerequisites) {
         this.prerequisites = prerequisites;
     }
 

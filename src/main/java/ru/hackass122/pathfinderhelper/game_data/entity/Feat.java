@@ -7,6 +7,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import ru.hackass122.pathfinderhelper.game_data.entity.effect.Effect;
+import ru.hackass122.pathfinderhelper.game_data.entity.prerequisite.Prerequisite;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -35,10 +36,11 @@ public class Feat extends TaggableRuleElement {
     private Set<Effect> effects = new HashSet<>();
 
     @Column
-    private String prerequisites; // TODO: заменить на подходящую реализацию
+    @ManyToMany
+    private Set<Prerequisite> prerequisites; // TODO: заменить на подходящую реализацию
 
     public Feat(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id, int level,
-                Set<Effect> effects, String prerequisites) {
+                Set<Effect> effects, Set<Prerequisite> prerequisites) {
         super(traits, code, name, description, legacy, id);
         this.level = level;
         this.effects = effects;
@@ -64,11 +66,11 @@ public class Feat extends TaggableRuleElement {
         this.effects = effects;
     }
 
-    public String getPrerequisites() {
+    public Set<Prerequisite> getPrerequisites() {
         return prerequisites;
     }
 
-    public void setPrerequisites(String prerequisites) {
+    public void setPrerequisites(Set<Prerequisite> prerequisites) {
         this.prerequisites = prerequisites;
     }
 }
