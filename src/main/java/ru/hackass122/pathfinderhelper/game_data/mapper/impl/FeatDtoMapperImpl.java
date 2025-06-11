@@ -1,7 +1,6 @@
 package ru.hackass122.pathfinderhelper.game_data.mapper.impl;
 
 import org.springframework.stereotype.Component;
-import ru.hackass122.pathfinderhelper.common.util.EntityCodeGenerator;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.FeatCreationRequestDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.EffectResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;

@@ -9,8 +9,6 @@ import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.FeatCreati
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.entity.Feat;
-import ru.hackass122.pathfinderhelper.game_data.entity.Trait;
-import ru.hackass122.pathfinderhelper.game_data.entity.effect.Effect;
 import ru.hackass122.pathfinderhelper.game_data.mapper.FeatDtoMapper;
 import ru.hackass122.pathfinderhelper.game_data.repository.entity.FeatRepository;
 import ru.hackass122.pathfinderhelper.game_data.service.EffectService;
