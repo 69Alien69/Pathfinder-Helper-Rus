@@ -1,0 +1,114 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1749680098920-1
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_action_prerequisites
+                  name: action_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_action_prerequisites
+                  name: prerequisites_id
+                  type: BIGINT
+            tableName: action_prerequisites
+  - changeSet:
+      id: 1749680098920-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_prerequisites
+                  name: feat_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_feat_prerequisites
+                  name: prerequisites_id
+                  type: BIGINT
+            tableName: feat_prerequisites
+  - changeSet:
+      id: 1749680098920-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: action_id
+            baseTableName: action_prerequisites
+            constraintName: fk_actpre_on_action
+            referencedColumnNames: id
+            referencedTableName: action
+  - changeSet:
+      id: 1749680098920-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: prerequisites_id
+            baseTableName: action_prerequisites
+            constraintName: fk_actpre_on_prerequisite
+            referencedColumnNames: id
+            referencedTableName: prerequisite
+  - changeSet:
+      id: 1749680098920-5
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: feat_id
+            baseTableName: feat_prerequisites
+            constraintName: fk_feapre_on_feat
+            referencedColumnNames: id
+            referencedTableName: feat
+  - changeSet:
+      id: 1749680098920-6
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: prerequisites_id
+            baseTableName: feat_prerequisites
+            constraintName: fk_feapre_on_prerequisite
+            referencedColumnNames: id
+            referencedTableName: prerequisite
+  - changeSet:
+      id: 1749680098920-11
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: effect
+            tableName: condition
+  - changeSet:
+      id: 1749680098920-12
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: prerequisites
+            tableName: action
+  - changeSet:
+      id: 1749680098920-13
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: prerequisites
+            tableName: feat
+
