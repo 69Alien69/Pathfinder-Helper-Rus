@@ -37,7 +37,7 @@ public class Feat extends TaggableRuleElement {
 
     @Column
     @ManyToMany
-    private Set<Prerequisite> prerequisites; // TODO: заменить на подходящую реализацию
+    private Set<Prerequisite> prerequisites;
 
     public Feat(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id, int level,
                 Set<Effect> effects, Set<Prerequisite> prerequisites) {
