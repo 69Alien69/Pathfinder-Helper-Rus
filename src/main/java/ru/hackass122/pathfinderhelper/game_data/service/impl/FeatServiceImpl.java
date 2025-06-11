@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.hackass122.pathfinderhelper.common.util.EntityCodeGenerator;
 import ru.hackass122.pathfinderhelper.game_data.dto.request.FeatCreationRequestDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.EffectResponseDto;
+import ru.hackass122.pathfinderhelper.game_data.dto.response.PrerequisiteResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.creation.FeatCreationResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.FeatResponseDto;
 import ru.hackass122.pathfinderhelper.game_data.dto.response.TraitResponseDto;
@@ -14,6 +15,7 @@ import ru.hackass122.pathfinderhelper.game_data.mapper.FeatDtoMapper;
 import ru.hackass122.pathfinderhelper.game_data.repository.entity.FeatRepository;
 import ru.hackass122.pathfinderhelper.game_data.service.EffectService;
 import ru.hackass122.pathfinderhelper.game_data.service.FeatService;
+import ru.hackass122.pathfinderhelper.game_data.service.PrerequisiteService;
 import ru.hackass122.pathfinderhelper.game_data.service.TraitService;
 
 import java.util.HashSet;
@@ -27,14 +29,16 @@ public class FeatServiceImpl implements FeatService {
     private final FeatDtoMapper featDtoMapper;
     private final TraitService traitService;
     private final EffectService effectService;
+    private final PrerequisiteService prerequisiteService;
 
     private static final String TYPE = "Feat";
 
-    public FeatServiceImpl(FeatRepository featRepository, FeatDtoMapper featDtoMapper, TraitService traitService, EffectService effectService) {
+    public FeatServiceImpl(FeatRepository featRepository, FeatDtoMapper featDtoMapper, TraitService traitService, EffectService effectService, PrerequisiteService prerequisiteService) {
         this.featRepository = featRepository;
         this.featDtoMapper = featDtoMapper;
         this.traitService = traitService;
         this.effectService = effectService;
+        this.prerequisiteService = prerequisiteService;
     }
 
 
@@ -64,31 +68,22 @@ public class FeatServiceImpl implements FeatService {
     public FeatCreationResponseDto getFeatCreationOptions() {
         Set<TraitResponseDto> traitResponseDtos = traitService.getAllTraitResponseDtos();
         Set<EffectResponseDto> effectResponseDtos = effectService.getAllEffectResponseDtos();
+        Set<PrerequisiteResponseDto> prerequisiteResponseDtos = prerequisiteService.getAllPrerequisiteDtos();
 
         return new FeatCreationResponseDto(traitResponseDtos,
                 effectResponseDtos,
-                "prerequisitesMock");
+                prerequisiteResponseDtos);
     }
 
     @Override
     public FeatResponseDto createFeat(FeatCreationRequestDto featCreationRequestDto) {
-        Set<Trait> traits = traitService.getTraitByCodes(featCreationRequestDto.traitCodes());
-        Set<Effect> effects = effectService.getEffectsByCodes(featCreationRequestDto.effectCodes());
+        Feat feat = featDtoMapper.creationRequestDtoToEntity(featCreationRequestDto);
 
         String code = EntityCodeGenerator.generateForOfficialComponent(featCreationRequestDto.name(),
                 TYPE,
                 featCreationRequestDto.legacy());
 
-        Feat feat = new Feat(traits,
-                code,
-                featCreationRequestDto.name(),
-                featCreationRequestDto.description(),
-                featCreationRequestDto.legacy(),
-                null,
-                featCreationRequestDto.level(),
-                effects,
-                featCreationRequestDto.prerequisites());
-
+        feat.setCode(code);
         feat = featRepository.save(feat);
         return featDtoMapper.entityToResponseDto(feat);
     }

@@ -8,5 +8,5 @@ public record FeatCreationRequestDto(Set<String> traitCodes,
                                      Boolean legacy,
                                      Integer level,
                                      Set<String> effectCodes,
-                                     String prerequisites) {
+                                     Set<String> prerequisiteCodes) {
 }

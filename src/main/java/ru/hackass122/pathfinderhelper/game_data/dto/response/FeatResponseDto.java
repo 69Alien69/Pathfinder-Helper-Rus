@@ -9,5 +9,5 @@ public record FeatResponseDto(Set<TraitResponseDto> traitResponseDtos,
                               Boolean legacy,
                               Integer level,
                               Set<EffectResponseDto> effectResponseDtos,
-                              String prerequisites) {
+                              Set<PrerequisiteResponseDto> prerequisites) {
 }
