@@ -8,7 +8,7 @@ import ru.hackass122.pathfinderhelper.game_data.entity.effect.Effect;
 public class Condition extends RuleElement {
 
     @OneToOne
-    private Effect effect; // TODO: подумать над реализацией
+    private Effect effect;
 
     public Condition(Effect effect) {
         this.effect = effect;
