@@ -8,5 +8,5 @@ import java.util.Set;
 
 public interface PrerequisiteRepository extends JpaRepository<Prerequisite, Long> {
     Set<Prerequisite> findAllByCodeIn(Set<String> codes);
-    Optional<Prerequisite> findPrerequisiteByCode();
+    Optional<Prerequisite> findPrerequisiteByCode(String code);
 }
