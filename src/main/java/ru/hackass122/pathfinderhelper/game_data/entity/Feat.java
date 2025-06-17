@@ -35,8 +35,12 @@ public class Feat extends TaggableRuleElement {
     )
     private Set<Effect> effects = new HashSet<>();
 
-    @Column
     @ManyToMany
+    @JoinTable(
+            name = "feat_prerequisites",
+            joinColumns = @JoinColumn(name = "feat_id"),
+            inverseJoinColumns = @JoinColumn(name = "prerequisite_id")
+    )
     private Set<Prerequisite> prerequisites;
 
     public Feat(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id, int level,
