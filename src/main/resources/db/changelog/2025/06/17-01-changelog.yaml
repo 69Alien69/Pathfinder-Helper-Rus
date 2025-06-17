@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1750178663639-7
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: feat_prerequisites
+            constraintName: fk_feapre_on_prerequisite
+  - changeSet:
+      id: 1750178663639-3
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: prerequisite_id
+                  type: BIGINT
+            tableName: feat_prerequisites
+  - changeSet:
+      id: 1750178663639-4
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: prerequisite_id
+            baseTableName: feat_prerequisites
+            constraintName: fk_feapre_on_prerequisite
+            referencedColumnNames: id
+            referencedTableName: prerequisite
+  - changeSet:
+      id: 1750178663639-10
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - dropColumn:
+            columnName: prerequisites_id
+            tableName: feat_prerequisites
+  - changeSet:
+      id: 1750178663639-2
+      author: Name
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addPrimaryKey:
+            columnNames: feat_id, prerequisite_id
+            constraintName: pk_feat_prerequisites
+            tableName: feat_prerequisites
+
