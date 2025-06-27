@@ -121,12 +121,15 @@ public class GameClass extends TaggableRuleElement{
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SpellCastingEntry> spellCastingEntries;
 
-    public GameClass(int hitDie, Set<Attribute> keyAbilities, ProficiencyRank initialPerception, Map<SaveThrow,
-            ProficiencyRank> initialSaveThrowsProficiencies, Map<Skill, ProficiencyRank> initialSkillProficiencies,
+    public GameClass(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id,
+                     int hitDie, Set<Attribute> keyAbilities, ProficiencyRank initialPerception,
+                     Map<SaveThrow, ProficiencyRank> initialSaveThrowsProficiencies,
+                     Map<Skill, ProficiencyRank> initialSkillProficiencies,
                      Map<WeaponCategory, ProficiencyRank> initialWeaponProficiencies,
                      Map<ArmorCategory, ProficiencyRank> initialArmorProficiencies, Set<Feat> gameClassFeats,
                      Set<SpecialAbility> specialAbilities, boolean isSpellCaster,
                      Set<SpellCastingEntry> spellCastingEntries) {
+        super(traits, code, name, description, legacy, id);
         this.hitDie = hitDie;
         this.keyAbilities = keyAbilities;
         this.initialPerception = initialPerception;

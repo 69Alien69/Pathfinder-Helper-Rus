@@ -25,7 +25,8 @@ public class SpellCastingEntry extends AbstractPersistable<Long> {
     @OneToMany(mappedBy = "entry", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SpellKnown> knownSpells;
 
-    public SpellCastingEntry(MagicTradition magicTradition, boolean hasSpells, List<SpellSlots> slots, Set<SpellKnown> knownSpells) {
+    public SpellCastingEntry(MagicTradition magicTradition, boolean hasSpells, List<SpellSlots> slots,
+                             Set<SpellKnown> knownSpells) {
         this.magicTradition = magicTradition;
         this.hasSpells = hasSpells;
         this.slots = slots;

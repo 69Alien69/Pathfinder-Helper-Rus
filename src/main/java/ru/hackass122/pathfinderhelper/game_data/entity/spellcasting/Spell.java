@@ -11,6 +11,9 @@ import ru.hackass122.pathfinderhelper.common.enums.ActionCost;
 import ru.hackass122.pathfinderhelper.common.enums.MagicTradition;
 import ru.hackass122.pathfinderhelper.common.enums.SaveThrow;
 import ru.hackass122.pathfinderhelper.game_data.entity.TaggableRuleElement;
+import ru.hackass122.pathfinderhelper.game_data.entity.Trait;
+
+import java.util.Set;
 
 @Entity
 @AssociationOverride(
@@ -56,8 +59,10 @@ public class Spell extends TaggableRuleElement {
     @Column
     private String effect; // TODO: подумать над реализацией
 
-    public Spell(MagicTradition magicTradition, boolean actionCast, ActionCost actionCastCost, int timeCast, int range,
+    public Spell(Set<Trait> traits, String code, String name, String description, boolean legacy, Long id,
+                 MagicTradition magicTradition, boolean actionCast, ActionCost actionCastCost, int timeCast, int range,
                  int area, String target, SaveThrow saveThrow, int duration, String effect) {
+        super(traits, code, name, description, legacy, id);
         this.magicTradition = magicTradition;
         this.actionCast = actionCast;
         this.actionCastCost = actionCastCost;
