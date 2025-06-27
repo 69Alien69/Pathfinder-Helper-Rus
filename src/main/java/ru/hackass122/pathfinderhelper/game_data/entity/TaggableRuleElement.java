@@ -12,9 +12,9 @@ public abstract class TaggableRuleElement extends RuleElement implements Taggabl
     @ManyToMany
     private Set<Trait> traits;
 
-    public TaggableRuleElement(Set<Trait> traits, String code, String name, String description, boolean deprecated,
+    public TaggableRuleElement(Set<Trait> traits, String code, String name, String description, boolean legacy,
                                Long id) {
-        super(code, name, description, deprecated, id);
+        super(code, name, description, legacy, id);
         this.traits = traits;
     }
 
